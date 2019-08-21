@@ -12,7 +12,7 @@ namespace Bar.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -27,8 +27,7 @@ namespace Bar.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Dima\\Documents\\Visu" +
-            "al Studio 2017\\Projects\\Bar\\Bar\\bin\\Debug\\BarDatabase.mdf\";Integrated Security=T" +
-            "rue")]
+            "al Studio 2017\\Projects\\Bar\\Bar\\BarDatabase.mdf\";Integrated Security=True")]
         public string BarDatabaseConnectionString {
             get {
                 return ((string)(this["BarDatabaseConnectionString"]));

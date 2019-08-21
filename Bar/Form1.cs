@@ -44,36 +44,43 @@ namespace Bar
         {
             panelLeft.Top = buttonAlcohol.Top;
             dataGridView.DataSource = alcoholBindingSource;
+            //this.alcoholTableAdapter.Fill(this.barDatabaseDataSet.Alcohol);
         }
 
         private void buttonSyrup_Click(object sender, EventArgs e)
         {
             panelLeft.Top = buttonSyrup.Top;
             dataGridView.DataSource = syrupBindingSource;
+            //this.syrupTableAdapter.Fill(this.barDatabaseDataSet.Syrup);
         }
 
         private void buttonSoda_Click(object sender, EventArgs e)
         {
             panelLeft.Top = buttonSoda.Top;
             dataGridView.DataSource = sodaBindingSource;
+            //this.sodaTableAdapter.Fill(this.barDatabaseDataSet.Soda);
         }
 
         private void buttonJuice_Click(object sender, EventArgs e)
         {  
             panelLeft.Top = buttonJuice.Top;
             dataGridView.DataSource = juiceBindingSource;
+           // this.juiceTableAdapter.Fill(this.barDatabaseDataSet.Juice);
         }
 
         private void buttonFruit_Click(object sender, EventArgs e)
         {
             panelLeft.Top = buttonFruit.Top;
             dataGridView.DataSource = fruitBindingSource;
+           // this.fruitTableAdapter.Fill(this.barDatabaseDataSet.Fruit);
+
         }
 
         private void buttonOther_Click(object sender, EventArgs e)
         {
             panelLeft.Top = buttonOther.Top;
             dataGridView.DataSource = otherBindingSource;
+            //this.otherTableAdapter.Fill(this.barDatabaseDataSet.Other);
         }
 
 
@@ -131,18 +138,18 @@ namespace Bar
         /*                  LOAD FILE (TABLE)              */
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'barDatabaseDataSet.Other' table. You can move, or remove it, as needed.
-            //this.otherTableAdapter.Fill(this.barDatabaseDataSet.Other);
-            // TODO: This line of code loads data into the 'barDatabaseDataSet.Syrup' table. You can move, or remove it, as needed.
-            //this.syrupTableAdapter.Fill(this.barDatabaseDataSet.Syrup);
-            // TODO: This line of code loads data into the 'barDatabaseDataSet.Soda' table. You can move, or remove it, as needed.
-            //this.sodaTableAdapter.Fill(this.barDatabaseDataSet.Soda);
-            // TODO: This line of code loads data into the 'barDatabaseDataSet.Juice' table. You can move, or remove it, as needed.
-            //this.juiceTableAdapter.Fill(this.barDatabaseDataSet.Juice);
-            // TODO: This line of code loads data into the 'barDatabaseDataSet.Fruit' table. You can move, or remove it, as needed.
-            //this.fruitTableAdapter.Fill(this.barDatabaseDataSet.Fruit);
             // TODO: This line of code loads data into the 'barDatabaseDataSet.Alcohol' table. You can move, or remove it, as needed.
-           // this.alcoholTableAdapter.Fill(this.barDatabaseDataSet.Alcohol);
+            this.alcoholTableAdapter.Fill(this.barDatabaseDataSet.Alcohol);
+            // TODO: This line of code loads data into the 'barDatabaseDataSet.Other' table. You can move, or remove it, as needed.
+            this.otherTableAdapter.Fill(this.barDatabaseDataSet.Other);
+            // TODO: This line of code loads data into the 'barDatabaseDataSet.Syrup' table. You can move, or remove it, as needed.
+            this.syrupTableAdapter.Fill(this.barDatabaseDataSet.Syrup);
+            // TODO: This line of code loads data into the 'barDatabaseDataSet.Soda' table. You can move, or remove it, as needed.
+            this.sodaTableAdapter.Fill(this.barDatabaseDataSet.Soda);
+            // TODO: This line of code loads data into the 'barDatabaseDataSet.Juice' table. You can move, or remove it, as needed.
+            this.juiceTableAdapter.Fill(this.barDatabaseDataSet.Juice);
+            // TODO: This line of code loads data into the 'barDatabaseDataSet.Fruit' table. You can move, or remove it, as needed.
+            this.fruitTableAdapter.Fill(this.barDatabaseDataSet.Fruit);
  
         }
 
@@ -152,6 +159,11 @@ namespace Bar
         }
 
         private void MakeButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorDeleteItem1_Click(object sender, EventArgs e)
         {
 
         }

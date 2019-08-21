@@ -490,6 +490,7 @@
             this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem1.Text = "Delete";
+            this.bindingNavigatorDeleteItem1.Click += new System.EventHandler(this.bindingNavigatorDeleteItem1_Click);
             // 
             // bindingNavigatorMoveFirstItem1
             // 
@@ -594,10 +595,10 @@
             this.tableAdapterManager.AlcoholTableAdapter = this.alcoholTableAdapter;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.FruitTableAdapter = this.fruitTableAdapter;
-            this.tableAdapterManager.JuiceTableAdapter = null;
-            this.tableAdapterManager.OtherTableAdapter = null;
-            this.tableAdapterManager.SodaTableAdapter = null;
-            this.tableAdapterManager.SyrupTableAdapter = null;
+            this.tableAdapterManager.JuiceTableAdapter = this.juiceTableAdapter;
+            this.tableAdapterManager.OtherTableAdapter = this.otherTableAdapter;
+            this.tableAdapterManager.SodaTableAdapter = this.sodaTableAdapter;
+            this.tableAdapterManager.SyrupTableAdapter = this.syrupTableAdapter;
             this.tableAdapterManager.UpdateOrder = Bar.BarDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // fruitTableAdapter
