@@ -44,35 +44,35 @@ namespace Bar
         {
             panelLeft.Top = buttonAlcohol.Top;
             dataGridView.DataSource = alcoholBindingSource;
-            //this.alcoholTableAdapter.Fill(this.barDatabaseDataSet.Alcohol);
+            alcoholBindingNavigator.BindingSource = alcoholBindingSource;
         }
 
         private void buttonSyrup_Click(object sender, EventArgs e)
         {
             panelLeft.Top = buttonSyrup.Top;
             dataGridView.DataSource = syrupBindingSource;
-            //this.syrupTableAdapter.Fill(this.barDatabaseDataSet.Syrup);
+            alcoholBindingNavigator.BindingSource = syrupBindingSource;
         }
 
         private void buttonSoda_Click(object sender, EventArgs e)
         {
             panelLeft.Top = buttonSoda.Top;
             dataGridView.DataSource = sodaBindingSource;
-            //this.sodaTableAdapter.Fill(this.barDatabaseDataSet.Soda);
+            alcoholBindingNavigator.BindingSource = sodaBindingSource;
         }
 
         private void buttonJuice_Click(object sender, EventArgs e)
         {  
             panelLeft.Top = buttonJuice.Top;
             dataGridView.DataSource = juiceBindingSource;
-           // this.juiceTableAdapter.Fill(this.barDatabaseDataSet.Juice);
+            alcoholBindingNavigator.BindingSource = juiceBindingSource;
         }
 
         private void buttonFruit_Click(object sender, EventArgs e)
         {
             panelLeft.Top = buttonFruit.Top;
             dataGridView.DataSource = fruitBindingSource;
-           // this.fruitTableAdapter.Fill(this.barDatabaseDataSet.Fruit);
+            alcoholBindingNavigator.BindingSource = fruitBindingSource;
 
         }
 
@@ -80,7 +80,7 @@ namespace Bar
         {
             panelLeft.Top = buttonOther.Top;
             dataGridView.DataSource = otherBindingSource;
-            //this.otherTableAdapter.Fill(this.barDatabaseDataSet.Other);
+            alcoholBindingNavigator.BindingSource = otherBindingSource;
         }
 
 
@@ -138,6 +138,9 @@ namespace Bar
         /*                  LOAD FILE (TABLE)              */
         private void Form1_Load(object sender, EventArgs e)
         {
+            //ToolStripSystemRenderer a = this.alcoholBindingNavigator.RenderMode;
+           
+
             // TODO: This line of code loads data into the 'barDatabaseDataSet.Alcohol' table. You can move, or remove it, as needed.
             this.alcoholTableAdapter.Fill(this.barDatabaseDataSet.Alcohol);
             // TODO: This line of code loads data into the 'barDatabaseDataSet.Other' table. You can move, or remove it, as needed.
@@ -153,6 +156,13 @@ namespace Bar
  
         }
 
+       /* private void DisableRoundedEdges(this ToolStripRenderer renderer)
+        {
+            var professionalRenderer = renderer as ToolStripProfessionalRenderer;
+            if (professionalRenderer != null)
+                professionalRenderer.RoundedEdges = false;
+        }
+        */
         private void cocktailsDBButton_Click(object sender, EventArgs e)
         {
 

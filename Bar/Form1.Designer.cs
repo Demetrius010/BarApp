@@ -46,21 +46,6 @@
             this.minimazeButton = new System.Windows.Forms.Button();
             this.minimazeBurtton = new System.Windows.Forms.Button();
             this.hatApplicationPanel = new System.Windows.Forms.Panel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alcoholBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
             this.alcoholBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -78,18 +63,33 @@
             this.alcoholBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fruitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.alcoholTableAdapter = new Bar.BarDatabaseDataSetTableAdapters.AlcoholTableAdapter();
             this.tableAdapterManager = new Bar.BarDatabaseDataSetTableAdapters.TableAdapterManager();
             this.fruitTableAdapter = new Bar.BarDatabaseDataSetTableAdapters.FruitTableAdapter();
-            this.juiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.juiceTableAdapter = new Bar.BarDatabaseDataSetTableAdapters.JuiceTableAdapter();
-            this.sodaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sodaTableAdapter = new Bar.BarDatabaseDataSetTableAdapters.SodaTableAdapter();
-            this.syrupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.syrupTableAdapter = new Bar.BarDatabaseDataSetTableAdapters.SyrupTableAdapter();
-            this.otherBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.otherTableAdapter = new Bar.BarDatabaseDataSetTableAdapters.OtherTableAdapter();
+            this.sodaTableAdapter = new Bar.BarDatabaseDataSetTableAdapters.SodaTableAdapter();
+            this.syrupTableAdapter = new Bar.BarDatabaseDataSetTableAdapters.SyrupTableAdapter();
+            this.juiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sodaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.syrupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.otherBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -332,16 +332,185 @@
             // hatApplicationPanel
             // 
             this.hatApplicationPanel.Controls.Add(this.fullScreenButton);
+            this.hatApplicationPanel.Controls.Add(this.alcoholBindingNavigator);
             this.hatApplicationPanel.Controls.Add(this.exitButton);
             this.hatApplicationPanel.Controls.Add(this.minimazeButton);
             this.hatApplicationPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.hatApplicationPanel.Location = new System.Drawing.Point(207, 0);
             this.hatApplicationPanel.Name = "hatApplicationPanel";
-            this.hatApplicationPanel.Size = new System.Drawing.Size(1174, 33);
+            this.hatApplicationPanel.Size = new System.Drawing.Size(1174, 32);
             this.hatApplicationPanel.TabIndex = 12;
             this.hatApplicationPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.hatApplicationPanel_MouseDown);
             this.hatApplicationPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.hatApplicationPanel_MouseMove);
             this.hatApplicationPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.hatApplicationPanel_MouseUp);
+            // 
+            // alcoholBindingNavigator
+            // 
+            this.alcoholBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem1;
+            this.alcoholBindingNavigator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.alcoholBindingNavigator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.alcoholBindingNavigator.BindingSource = this.alcoholBindingSource;
+            this.alcoholBindingNavigator.CountItem = this.bindingNavigatorCountItem1;
+            this.alcoholBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem1;
+            this.alcoholBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
+            this.alcoholBindingNavigator.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.alcoholBindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.alcoholBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem1,
+            this.bindingNavigatorMovePreviousItem1,
+            this.bindingNavigatorSeparator3,
+            this.bindingNavigatorPositionItem1,
+            this.bindingNavigatorCountItem1,
+            this.bindingNavigatorSeparator4,
+            this.bindingNavigatorMoveNextItem1,
+            this.bindingNavigatorMoveLastItem1,
+            this.bindingNavigatorSeparator5,
+            this.bindingNavigatorAddNewItem1,
+            this.bindingNavigatorDeleteItem1,
+            this.alcoholBindingNavigatorSaveItem,
+            this.toolStripButton1,
+            this.toolStripButton2});
+            this.alcoholBindingNavigator.Location = new System.Drawing.Point(3, 3);
+            this.alcoholBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
+            this.alcoholBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem1;
+            this.alcoholBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem1;
+            this.alcoholBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
+            this.alcoholBindingNavigator.Name = "alcoholBindingNavigator";
+            this.alcoholBindingNavigator.Padding = new System.Windows.Forms.Padding(0);
+            this.alcoholBindingNavigator.PositionItem = this.bindingNavigatorPositionItem1;
+            this.alcoholBindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.alcoholBindingNavigator.Size = new System.Drawing.Size(316, 25);
+            this.alcoholBindingNavigator.TabIndex = 13;
+            this.alcoholBindingNavigator.Text = "bindingNavigator1";
+            this.alcoholBindingNavigator.Renderer = new MyToolStripSystemRenderer();
+            // 
+            // bindingNavigatorAddNewItem1
+            // 
+            this.bindingNavigatorAddNewItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem1.Image")));
+            this.bindingNavigatorAddNewItem1.Name = "bindingNavigatorAddNewItem1";
+            this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem1.Text = "Add new";
+            // 
+            // alcoholBindingSource
+            // 
+            this.alcoholBindingSource.DataMember = "Alcohol";
+            this.alcoholBindingSource.DataSource = this.barDatabaseDataSet;
+            // 
+            // barDatabaseDataSet
+            // 
+            this.barDatabaseDataSet.DataSetName = "BarDatabaseDataSet";
+            this.barDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingNavigatorCountItem1
+            // 
+            this.bindingNavigatorCountItem1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.bindingNavigatorCountItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
+            this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem1.Text = "of {0}";
+            this.bindingNavigatorCountItem1.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem1
+            // 
+            this.bindingNavigatorDeleteItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem1.Image")));
+            this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem1";
+            this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem1.Text = "Delete";
+            this.bindingNavigatorDeleteItem1.Click += new System.EventHandler(this.bindingNavigatorDeleteItem1_Click);
+            // 
+            // bindingNavigatorMoveFirstItem1
+            // 
+            this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
+            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem1";
+            this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem1.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem1
+            // 
+            this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
+            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem1";
+            this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem1.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator3
+            // 
+            this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator3";
+            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem1
+            // 
+            this.bindingNavigatorPositionItem1.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.bindingNavigatorPositionItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
+            this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
+            this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 22);
+            this.bindingNavigatorPositionItem1.Text = "0";
+            this.bindingNavigatorPositionItem1.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator4
+            // 
+            this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
+            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem1
+            // 
+            this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
+            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem1";
+            this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem1.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem1
+            // 
+            this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
+            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem1";
+            this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem1.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator5
+            // 
+            this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
+            this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // alcoholBindingNavigatorSaveItem
+            // 
+            this.alcoholBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.alcoholBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("alcoholBindingNavigatorSaveItem.Image")));
+            this.alcoholBindingNavigatorSaveItem.Name = "alcoholBindingNavigatorSaveItem";
+            this.alcoholBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.alcoholBindingNavigatorSaveItem.Text = "Save Data";
+            this.alcoholBindingNavigatorSaveItem.Click += new System.EventHandler(this.alcoholBindingNavigatorSaveItem_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Bar.Properties.Resources.stats50;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::Bar.Properties.Resources.pie_chart50;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "toolStripButton2";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -422,165 +591,6 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Price";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // alcoholBindingNavigator
-            // 
-            this.alcoholBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem1;
-            this.alcoholBindingNavigator.BindingSource = this.alcoholBindingSource;
-            this.alcoholBindingNavigator.CountItem = this.bindingNavigatorCountItem1;
-            this.alcoholBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem1;
-            this.alcoholBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem1,
-            this.bindingNavigatorMovePreviousItem1,
-            this.bindingNavigatorSeparator3,
-            this.bindingNavigatorPositionItem1,
-            this.bindingNavigatorCountItem1,
-            this.bindingNavigatorSeparator4,
-            this.bindingNavigatorMoveNextItem1,
-            this.bindingNavigatorMoveLastItem1,
-            this.bindingNavigatorSeparator5,
-            this.bindingNavigatorAddNewItem1,
-            this.bindingNavigatorDeleteItem1,
-            this.alcoholBindingNavigatorSaveItem,
-            this.toolStripButton1,
-            this.toolStripButton2});
-            this.alcoholBindingNavigator.Location = new System.Drawing.Point(207, 33);
-            this.alcoholBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
-            this.alcoholBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem1;
-            this.alcoholBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem1;
-            this.alcoholBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
-            this.alcoholBindingNavigator.Name = "alcoholBindingNavigator";
-            this.alcoholBindingNavigator.PositionItem = this.bindingNavigatorPositionItem1;
-            this.alcoholBindingNavigator.Size = new System.Drawing.Size(1174, 25);
-            this.alcoholBindingNavigator.TabIndex = 13;
-            this.alcoholBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem1
-            // 
-            this.bindingNavigatorAddNewItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem1.Image")));
-            this.bindingNavigatorAddNewItem1.Name = "bindingNavigatorAddNewItem1";
-            this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem1.Text = "Add new";
-            // 
-            // alcoholBindingSource
-            // 
-            this.alcoholBindingSource.DataMember = "Alcohol";
-            this.alcoholBindingSource.DataSource = this.barDatabaseDataSet;
-            // 
-            // barDatabaseDataSet
-            // 
-            this.barDatabaseDataSet.DataSetName = "BarDatabaseDataSet";
-            this.barDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingNavigatorCountItem1
-            // 
-            this.bindingNavigatorCountItem1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.bindingNavigatorCountItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
-            this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
-            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem1.Text = "of {0}";
-            this.bindingNavigatorCountItem1.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem1
-            // 
-            this.bindingNavigatorDeleteItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem1.Image")));
-            this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem1";
-            this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem1.Text = "Delete";
-            this.bindingNavigatorDeleteItem1.Click += new System.EventHandler(this.bindingNavigatorDeleteItem1_Click);
-            // 
-            // bindingNavigatorMoveFirstItem1
-            // 
-            this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
-            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem1";
-            this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem1.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem1
-            // 
-            this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
-            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem1";
-            this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem1.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator3
-            // 
-            this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator3";
-            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem1
-            // 
-            this.bindingNavigatorPositionItem1.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem1.AutoSize = false;
-            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.bindingNavigatorPositionItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
-            this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
-            this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 22);
-            this.bindingNavigatorPositionItem1.Text = "0";
-            this.bindingNavigatorPositionItem1.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator4
-            // 
-            this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
-            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem1
-            // 
-            this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
-            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem1";
-            this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem1.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem1
-            // 
-            this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
-            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem1";
-            this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem1.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator5
-            // 
-            this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
-            this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
-            // 
-            // alcoholBindingNavigatorSaveItem
-            // 
-            this.alcoholBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.alcoholBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("alcoholBindingNavigatorSaveItem.Image")));
-            this.alcoholBindingNavigatorSaveItem.Name = "alcoholBindingNavigatorSaveItem";
-            this.alcoholBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.alcoholBindingNavigatorSaveItem.Text = "Save Data";
-            this.alcoholBindingNavigatorSaveItem.Click += new System.EventHandler(this.alcoholBindingNavigatorSaveItem_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Bar.Properties.Resources.stats50;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::Bar.Properties.Resources.pie_chart50;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
             // fruitBindingSource
             // 
             this.fruitBindingSource.DataMember = "Fruit";
@@ -605,51 +615,51 @@
             // 
             this.fruitTableAdapter.ClearBeforeFill = true;
             // 
+            // juiceTableAdapter
+            // 
+            this.juiceTableAdapter.ClearBeforeFill = true;
+            // 
+            // otherTableAdapter
+            // 
+            this.otherTableAdapter.ClearBeforeFill = true;
+            // 
+            // sodaTableAdapter
+            // 
+            this.sodaTableAdapter.ClearBeforeFill = true;
+            // 
+            // syrupTableAdapter
+            // 
+            this.syrupTableAdapter.ClearBeforeFill = true;
+            // 
             // juiceBindingSource
             // 
             this.juiceBindingSource.DataMember = "Juice";
             this.juiceBindingSource.DataSource = this.barDatabaseDataSet;
-            // 
-            // juiceTableAdapter
-            // 
-            this.juiceTableAdapter.ClearBeforeFill = true;
             // 
             // sodaBindingSource
             // 
             this.sodaBindingSource.DataMember = "Soda";
             this.sodaBindingSource.DataSource = this.barDatabaseDataSet;
             // 
-            // sodaTableAdapter
-            // 
-            this.sodaTableAdapter.ClearBeforeFill = true;
-            // 
             // syrupBindingSource
             // 
             this.syrupBindingSource.DataMember = "Syrup";
             this.syrupBindingSource.DataSource = this.barDatabaseDataSet;
-            // 
-            // syrupTableAdapter
-            // 
-            this.syrupTableAdapter.ClearBeforeFill = true;
             // 
             // otherBindingSource
             // 
             this.otherBindingSource.DataMember = "Other";
             this.otherBindingSource.DataSource = this.barDatabaseDataSet;
             // 
-            // otherTableAdapter
-            // 
-            this.otherTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridView
             // 
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(223, 61);
+            this.dataGridView.Location = new System.Drawing.Point(220, 31);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridView.ShowCellErrors = false;
-            this.dataGridView.Size = new System.Drawing.Size(1128, 360);
+            this.dataGridView.Size = new System.Drawing.Size(1125, 360);
             this.dataGridView.TabIndex = 14;
             // 
             // Form1
@@ -659,7 +669,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1381, 758);
             this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.alcoholBindingNavigator);
             this.Controls.Add(this.hatApplicationPanel);
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panel1);
@@ -672,6 +681,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.hatApplicationPanel.ResumeLayout(false);
+            this.hatApplicationPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alcoholBindingNavigator)).EndInit();
             this.alcoholBindingNavigator.ResumeLayout(false);
             this.alcoholBindingNavigator.PerformLayout();
@@ -684,7 +694,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.otherBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
