@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
+using System.Net;
 
 
 namespace Bar
@@ -138,9 +139,9 @@ namespace Bar
         /*                  LOAD FILE (TABLE)              */
         private void Form1_Load(object sender, EventArgs e)
         {
-            //ToolStripSystemRenderer a = this.alcoholBindingNavigator.RenderMode;
-           
-
+            alcoholBindingNavigator.Renderer = new MyToolStripSystemRenderer();
+            // TODO: This line of code loads data into the 'barDatabaseDataSet.Drinks' table. You can move, or remove it, as needed.
+            this.drinksTableAdapter.Fill(this.barDatabaseDataSet.Drinks);
             // TODO: This line of code loads data into the 'barDatabaseDataSet.Alcohol' table. You can move, or remove it, as needed.
             this.alcoholTableAdapter.Fill(this.barDatabaseDataSet.Alcohol);
             // TODO: This line of code loads data into the 'barDatabaseDataSet.Other' table. You can move, or remove it, as needed.
@@ -156,16 +157,33 @@ namespace Bar
  
         }
 
-       /* private void DisableRoundedEdges(this ToolStripRenderer renderer)
-        {
-            var professionalRenderer = renderer as ToolStripProfessionalRenderer;
-            if (professionalRenderer != null)
-                professionalRenderer.RoundedEdges = false;
-        }
-        */
         private void cocktailsDBButton_Click(object sender, EventArgs e)
         {
+            /*try
+            {
+                DataTable DrinksTable = this.barDatabaseDataSet.Drinks;
+                foreach (DataRow foundRows in DrinksTable.Select("strIngredient1 LIKE '%Brandy%'"))// IN('%Vodka%', '%Gun%', '%Brandy%')
+                {
+                    Console.WriteLine(foundRows["strDrink"]);
+                }
+                /*foreach(DataRow row in DrinksTable.Rows)
+                {
+                    foreach(DataColumn col in DrinksTable.Columns)
+                }*
+                
+                /*string link = DrinksTable.Rows[0]["strDrinkThumb"].ToString();
+                Console.WriteLine(link);
+                WebClient wc = new WebClient();
+                byte[] bytes = wc.DownloadData(link);
+                MemoryStream ms = new MemoryStream(bytes);
+                System.Drawing.Image image = System.Drawing.Image.FromStream(ms);
+                pictureBox2.Image = image;*/
 
+            /*}
+            catch (Exception error)
+            {
+                Console.WriteLine("Error: " + error.Message);
+            }*/
         }
 
         private void MakeButton_Click(object sender, EventArgs e)

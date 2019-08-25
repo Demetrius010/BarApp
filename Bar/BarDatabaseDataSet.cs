@@ -4,6 +4,9 @@
 
     partial class BarDatabaseDataSet
     {
+        partial class DataTable1DataTable
+        {
+        }
     }
 }
 

@@ -428,6 +428,310 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)</C
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DrinksTableAdapter" GeneratorDataComponentClassName="DrinksTableAdapter" Name="Drinks" UserDataComponentName="DrinksTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BarDatabaseConnectionString (Settings)" DbObjectName="dbo.Drinks" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Drinks] WHERE (([idDrink] = @Original_idDrink) AND ([strDrink] = @Original_strDrink) AND ((@IsNull_strTags = 1 AND [strTags] IS NULL) OR ([strTags] = @Original_strTags)) AND ([strCategory] = @Original_strCategory) AND ((@IsNull_strIBA = 1 AND [strIBA] IS NULL) OR ([strIBA] = @Original_strIBA)) AND ((@IsNull_strAlcoholic = 1 AND [strAlcoholic] IS NULL) OR ([strAlcoholic] = @Original_strAlcoholic)) AND ([strGlass] = @Original_strGlass) AND ((@IsNull_strInstructions = 1 AND [strInstructions] IS NULL) OR ([strInstructions] = @Original_strInstructions)) AND ([strDrinkThumb] = @Original_strDrinkThumb) AND ([strIngredient1] = @Original_strIngredient1) AND ([strIngredient2] = @Original_strIngredient2) AND ((@IsNull_strIngredient3 = 1 AND [strIngredient3] IS NULL) OR ([strIngredient3] = @Original_strIngredient3)) AND ((@IsNull_strIngredient4 = 1 AND [strIngredient4] IS NULL) OR ([strIngredient4] = @Original_strIngredient4)) AND ((@IsNull_strIngredient5 = 1 AND [strIngredient5] IS NULL) OR ([strIngredient5] = @Original_strIngredient5)) AND ((@IsNull_strIngredient6 = 1 AND [strIngredient6] IS NULL) OR ([strIngredient6] = @Original_strIngredient6)) AND ((@IsNull_strIngredient7 = 1 AND [strIngredient7] IS NULL) OR ([strIngredient7] = @Original_strIngredient7)) AND ((@IsNull_strIngredient8 = 1 AND [strIngredient8] IS NULL) OR ([strIngredient8] = @Original_strIngredient8)) AND ((@IsNull_strIngredient9 = 1 AND [strIngredient9] IS NULL) OR ([strIngredient9] = @Original_strIngredient9)) AND ((@IsNull_strIngredient10 = 1 AND [strIngredient10] IS NULL) OR ([strIngredient10] = @Original_strIngredient10)) AND ((@IsNull_strIngredient11 = 1 AND [strIngredient11] IS NULL) OR ([strIngredient11] = @Original_strIngredient11)) AND ((@IsNull_strIngredient12 = 1 AND [strIngredient12] IS NULL) OR ([strIngredient12] = @Original_strIngredient12)) AND ((@IsNull_strIngredient13 = 1 AND [strIngredient13] IS NULL) OR ([strIngredient13] = @Original_strIngredient13)) AND ((@IsNull_strIngredient14 = 1 AND [strIngredient14] IS NULL) OR ([strIngredient14] = @Original_strIngredient14)) AND ((@IsNull_strIngredient15 = 1 AND [strIngredient15] IS NULL) OR ([strIngredient15] = @Original_strIngredient15)) AND ((@IsNull_strMeasure1 = 1 AND [strMeasure1] IS NULL) OR ([strMeasure1] = @Original_strMeasure1)) AND ((@IsNull_strMeasure2 = 1 AND [strMeasure2] IS NULL) OR ([strMeasure2] = @Original_strMeasure2)) AND ((@IsNull_strMeasure3 = 1 AND [strMeasure3] IS NULL) OR ([strMeasure3] = @Original_strMeasure3)) AND ((@IsNull_strMeasure4 = 1 AND [strMeasure4] IS NULL) OR ([strMeasure4] = @Original_strMeasure4)) AND ((@IsNull_strMeasure5 = 1 AND [strMeasure5] IS NULL) OR ([strMeasure5] = @Original_strMeasure5)) AND ((@IsNull_strMeasure6 = 1 AND [strMeasure6] IS NULL) OR ([strMeasure6] = @Original_strMeasure6)) AND ((@IsNull_strMeasure7 = 1 AND [strMeasure7] IS NULL) OR ([strMeasure7] = @Original_strMeasure7)) AND ((@IsNull_strMeasure8 = 1 AND [strMeasure8] IS NULL) OR ([strMeasure8] = @Original_strMeasure8)) AND ((@IsNull_strMeasure9 = 1 AND [strMeasure9] IS NULL) OR ([strMeasure9] = @Original_strMeasure9)) AND ((@IsNull_strMeasure10 = 1 AND [strMeasure10] IS NULL) OR ([strMeasure10] = @Original_strMeasure10)) AND ((@IsNull_strMeasure11 = 1 AND [strMeasure11] IS NULL) OR ([strMeasure11] = @Original_strMeasure11)) AND ((@IsNull_strMeasure12 = 1 AND [strMeasure12] IS NULL) OR ([strMeasure12] = @Original_strMeasure12)) AND ((@IsNull_strMeasure13 = 1 AND [strMeasure13] IS NULL) OR ([strMeasure13] = @Original_strMeasure13)) AND ((@IsNull_strMeasure14 = 1 AND [strMeasure14] IS NULL) OR ([strMeasure14] = @Original_strMeasure14)) AND ((@IsNull_strMeasure15 = 1 AND [strMeasure15] IS NULL) OR ([strMeasure15] = @Original_strMeasure15)) AND ((@IsNull_dateModified = 1 AND [dateModified] IS NULL) OR ([dateModified] = @Original_dateModified)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idDrink" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idDrink" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strDrink" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strDrink" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strTags" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strTags" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strTags" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strTags" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strCategory" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strCategory" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIBA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIBA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIBA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIBA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strAlcoholic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strAlcoholic" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strAlcoholic" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strAlcoholic" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strGlass" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strGlass" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strInstructions" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strInstructions" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strInstructions" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strInstructions" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strDrinkThumb" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strDrinkThumb" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient3" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient3" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient4" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient4" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient4" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient5" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient5" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient5" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient6" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient6" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient6" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient7" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient7" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient7" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient8" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient8" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient8" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient8" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient9" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient9" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient9" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient10" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient10" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient10" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient10" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient11" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient11" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient11" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient12" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient12" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient12" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient12" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient13" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient13" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient13" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient14" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient14" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient14" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient15" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient15" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient15" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure1" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure2" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure3" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure3" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure4" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure4" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure4" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure5" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure5" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure5" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure6" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure6" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure6" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure7" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure7" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure7" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure8" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure8" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure8" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure8" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure9" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure9" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure9" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure10" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure10" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure10" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure10" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure11" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure11" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure11" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure12" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure12" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure12" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure12" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure13" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure13" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure13" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure14" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure14" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure14" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure15" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure15" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure15" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_dateModified" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="dateModified" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_dateModified" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="dateModified" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Drinks] ([idDrink], [strDrink], [strTags], [strCategory], [strIBA], [strAlcoholic], [strGlass], [strInstructions], [strDrinkThumb], [strIngredient1], [strIngredient2], [strIngredient3], [strIngredient4], [strIngredient5], [strIngredient6], [strIngredient7], [strIngredient8], [strIngredient9], [strIngredient10], [strIngredient11], [strIngredient12], [strIngredient13], [strIngredient14], [strIngredient15], [strMeasure1], [strMeasure2], [strMeasure3], [strMeasure4], [strMeasure5], [strMeasure6], [strMeasure7], [strMeasure8], [strMeasure9], [strMeasure10], [strMeasure11], [strMeasure12], [strMeasure13], [strMeasure14], [strMeasure15], [dateModified]) VALUES (@idDrink, @strDrink, @strTags, @strCategory, @strIBA, @strAlcoholic, @strGlass, @strInstructions, @strDrinkThumb, @strIngredient1, @strIngredient2, @strIngredient3, @strIngredient4, @strIngredient5, @strIngredient6, @strIngredient7, @strIngredient8, @strIngredient9, @strIngredient10, @strIngredient11, @strIngredient12, @strIngredient13, @strIngredient14, @strIngredient15, @strMeasure1, @strMeasure2, @strMeasure3, @strMeasure4, @strMeasure5, @strMeasure6, @strMeasure7, @strMeasure8, @strMeasure9, @strMeasure10, @strMeasure11, @strMeasure12, @strMeasure13, @strMeasure14, @strMeasure15, @dateModified);
+SELECT idDrink, strDrink, strTags, strCategory, strIBA, strAlcoholic, strGlass, strInstructions, strDrinkThumb, strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5, strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10, strIngredient11, strIngredient12, strIngredient13, strIngredient14, strIngredient15, strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5, strMeasure6, strMeasure7, strMeasure8, strMeasure9, strMeasure10, strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15, dateModified FROM Drinks WHERE (idDrink = @idDrink)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idDrink" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idDrink" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strDrink" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strDrink" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strTags" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strTags" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strCategory" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strCategory" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIBA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIBA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strAlcoholic" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strAlcoholic" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strGlass" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strGlass" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strInstructions" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strInstructions" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strDrinkThumb" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strDrinkThumb" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient6" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient7" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient8" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient9" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient10" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient10" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient11" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient12" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient12" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient13" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient14" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient15" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure6" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure7" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure8" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure9" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure10" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure10" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure11" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure12" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure12" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure13" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure14" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure15" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@dateModified" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="dateModified" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idDrink, strDrink, strTags, strCategory, strIBA, strAlcoholic, strGlass, strInstructions, strDrinkThumb, strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5, strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10, strIngredient11, strIngredient12, strIngredient13, strIngredient14, strIngredient15, strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5, strMeasure6, strMeasure7, strMeasure8, strMeasure9, strMeasure10, strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15, dateModified FROM dbo.Drinks</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Drinks] SET [idDrink] = @idDrink, [strDrink] = @strDrink, [strTags] = @strTags, [strCategory] = @strCategory, [strIBA] = @strIBA, [strAlcoholic] = @strAlcoholic, [strGlass] = @strGlass, [strInstructions] = @strInstructions, [strDrinkThumb] = @strDrinkThumb, [strIngredient1] = @strIngredient1, [strIngredient2] = @strIngredient2, [strIngredient3] = @strIngredient3, [strIngredient4] = @strIngredient4, [strIngredient5] = @strIngredient5, [strIngredient6] = @strIngredient6, [strIngredient7] = @strIngredient7, [strIngredient8] = @strIngredient8, [strIngredient9] = @strIngredient9, [strIngredient10] = @strIngredient10, [strIngredient11] = @strIngredient11, [strIngredient12] = @strIngredient12, [strIngredient13] = @strIngredient13, [strIngredient14] = @strIngredient14, [strIngredient15] = @strIngredient15, [strMeasure1] = @strMeasure1, [strMeasure2] = @strMeasure2, [strMeasure3] = @strMeasure3, [strMeasure4] = @strMeasure4, [strMeasure5] = @strMeasure5, [strMeasure6] = @strMeasure6, [strMeasure7] = @strMeasure7, [strMeasure8] = @strMeasure8, [strMeasure9] = @strMeasure9, [strMeasure10] = @strMeasure10, [strMeasure11] = @strMeasure11, [strMeasure12] = @strMeasure12, [strMeasure13] = @strMeasure13, [strMeasure14] = @strMeasure14, [strMeasure15] = @strMeasure15, [dateModified] = @dateModified WHERE (([idDrink] = @Original_idDrink) AND ([strDrink] = @Original_strDrink) AND ((@IsNull_strTags = 1 AND [strTags] IS NULL) OR ([strTags] = @Original_strTags)) AND ([strCategory] = @Original_strCategory) AND ((@IsNull_strIBA = 1 AND [strIBA] IS NULL) OR ([strIBA] = @Original_strIBA)) AND ((@IsNull_strAlcoholic = 1 AND [strAlcoholic] IS NULL) OR ([strAlcoholic] = @Original_strAlcoholic)) AND ([strGlass] = @Original_strGlass) AND ((@IsNull_strInstructions = 1 AND [strInstructions] IS NULL) OR ([strInstructions] = @Original_strInstructions)) AND ([strDrinkThumb] = @Original_strDrinkThumb) AND ([strIngredient1] = @Original_strIngredient1) AND ([strIngredient2] = @Original_strIngredient2) AND ((@IsNull_strIngredient3 = 1 AND [strIngredient3] IS NULL) OR ([strIngredient3] = @Original_strIngredient3)) AND ((@IsNull_strIngredient4 = 1 AND [strIngredient4] IS NULL) OR ([strIngredient4] = @Original_strIngredient4)) AND ((@IsNull_strIngredient5 = 1 AND [strIngredient5] IS NULL) OR ([strIngredient5] = @Original_strIngredient5)) AND ((@IsNull_strIngredient6 = 1 AND [strIngredient6] IS NULL) OR ([strIngredient6] = @Original_strIngredient6)) AND ((@IsNull_strIngredient7 = 1 AND [strIngredient7] IS NULL) OR ([strIngredient7] = @Original_strIngredient7)) AND ((@IsNull_strIngredient8 = 1 AND [strIngredient8] IS NULL) OR ([strIngredient8] = @Original_strIngredient8)) AND ((@IsNull_strIngredient9 = 1 AND [strIngredient9] IS NULL) OR ([strIngredient9] = @Original_strIngredient9)) AND ((@IsNull_strIngredient10 = 1 AND [strIngredient10] IS NULL) OR ([strIngredient10] = @Original_strIngredient10)) AND ((@IsNull_strIngredient11 = 1 AND [strIngredient11] IS NULL) OR ([strIngredient11] = @Original_strIngredient11)) AND ((@IsNull_strIngredient12 = 1 AND [strIngredient12] IS NULL) OR ([strIngredient12] = @Original_strIngredient12)) AND ((@IsNull_strIngredient13 = 1 AND [strIngredient13] IS NULL) OR ([strIngredient13] = @Original_strIngredient13)) AND ((@IsNull_strIngredient14 = 1 AND [strIngredient14] IS NULL) OR ([strIngredient14] = @Original_strIngredient14)) AND ((@IsNull_strIngredient15 = 1 AND [strIngredient15] IS NULL) OR ([strIngredient15] = @Original_strIngredient15)) AND ((@IsNull_strMeasure1 = 1 AND [strMeasure1] IS NULL) OR ([strMeasure1] = @Original_strMeasure1)) AND ((@IsNull_strMeasure2 = 1 AND [strMeasure2] IS NULL) OR ([strMeasure2] = @Original_strMeasure2)) AND ((@IsNull_strMeasure3 = 1 AND [strMeasure3] IS NULL) OR ([strMeasure3] = @Original_strMeasure3)) AND ((@IsNull_strMeasure4 = 1 AND [strMeasure4] IS NULL) OR ([strMeasure4] = @Original_strMeasure4)) AND ((@IsNull_strMeasure5 = 1 AND [strMeasure5] IS NULL) OR ([strMeasure5] = @Original_strMeasure5)) AND ((@IsNull_strMeasure6 = 1 AND [strMeasure6] IS NULL) OR ([strMeasure6] = @Original_strMeasure6)) AND ((@IsNull_strMeasure7 = 1 AND [strMeasure7] IS NULL) OR ([strMeasure7] = @Original_strMeasure7)) AND ((@IsNull_strMeasure8 = 1 AND [strMeasure8] IS NULL) OR ([strMeasure8] = @Original_strMeasure8)) AND ((@IsNull_strMeasure9 = 1 AND [strMeasure9] IS NULL) OR ([strMeasure9] = @Original_strMeasure9)) AND ((@IsNull_strMeasure10 = 1 AND [strMeasure10] IS NULL) OR ([strMeasure10] = @Original_strMeasure10)) AND ((@IsNull_strMeasure11 = 1 AND [strMeasure11] IS NULL) OR ([strMeasure11] = @Original_strMeasure11)) AND ((@IsNull_strMeasure12 = 1 AND [strMeasure12] IS NULL) OR ([strMeasure12] = @Original_strMeasure12)) AND ((@IsNull_strMeasure13 = 1 AND [strMeasure13] IS NULL) OR ([strMeasure13] = @Original_strMeasure13)) AND ((@IsNull_strMeasure14 = 1 AND [strMeasure14] IS NULL) OR ([strMeasure14] = @Original_strMeasure14)) AND ((@IsNull_strMeasure15 = 1 AND [strMeasure15] IS NULL) OR ([strMeasure15] = @Original_strMeasure15)) AND ((@IsNull_dateModified = 1 AND [dateModified] IS NULL) OR ([dateModified] = @Original_dateModified)));
+SELECT idDrink, strDrink, strTags, strCategory, strIBA, strAlcoholic, strGlass, strInstructions, strDrinkThumb, strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5, strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10, strIngredient11, strIngredient12, strIngredient13, strIngredient14, strIngredient15, strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5, strMeasure6, strMeasure7, strMeasure8, strMeasure9, strMeasure10, strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15, dateModified FROM Drinks WHERE (idDrink = @idDrink)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idDrink" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idDrink" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strDrink" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strDrink" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strTags" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strTags" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strCategory" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strCategory" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIBA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIBA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strAlcoholic" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strAlcoholic" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strGlass" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strGlass" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strInstructions" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strInstructions" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strDrinkThumb" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strDrinkThumb" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient6" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient7" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient8" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient9" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient10" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient10" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient11" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient12" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient12" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient13" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient14" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strIngredient15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient15" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure6" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure7" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure8" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure9" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure10" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure10" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure11" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure12" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure12" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure13" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure14" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@strMeasure15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure15" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@dateModified" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="dateModified" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idDrink" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idDrink" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strDrink" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strDrink" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strTags" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strTags" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strTags" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strTags" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strCategory" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strCategory" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIBA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIBA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIBA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIBA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strAlcoholic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strAlcoholic" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strAlcoholic" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strAlcoholic" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strGlass" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strGlass" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strInstructions" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strInstructions" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strInstructions" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strInstructions" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strDrinkThumb" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strDrinkThumb" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient3" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient3" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient4" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient4" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient4" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient5" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient5" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient5" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient6" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient6" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient6" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient7" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient7" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient7" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient8" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient8" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient8" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient8" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient9" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient9" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient9" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient10" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient10" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient10" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient10" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient11" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient11" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient11" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient12" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient12" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient12" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient12" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient13" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient13" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient13" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient14" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient14" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient14" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strIngredient15" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strIngredient15" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strIngredient15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strIngredient15" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure1" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure1" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure2" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure3" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure3" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure4" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure4" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure4" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure5" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure5" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure5" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure6" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure6" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure6" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure7" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure7" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure7" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure8" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure8" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure8" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure8" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure9" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure9" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure9" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure10" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure10" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure10" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure10" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure11" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure11" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure11" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure12" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure12" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure12" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure12" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure13" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure13" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure13" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure14" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure14" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure14" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_strMeasure15" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="strMeasure15" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_strMeasure15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="strMeasure15" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_dateModified" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="dateModified" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_dateModified" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="dateModified" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idDrink" DataSetColumn="idDrink" />
+              <Mapping SourceColumn="strDrink" DataSetColumn="strDrink" />
+              <Mapping SourceColumn="strTags" DataSetColumn="strTags" />
+              <Mapping SourceColumn="strCategory" DataSetColumn="strCategory" />
+              <Mapping SourceColumn="strIBA" DataSetColumn="strIBA" />
+              <Mapping SourceColumn="strAlcoholic" DataSetColumn="strAlcoholic" />
+              <Mapping SourceColumn="strGlass" DataSetColumn="strGlass" />
+              <Mapping SourceColumn="strInstructions" DataSetColumn="strInstructions" />
+              <Mapping SourceColumn="strDrinkThumb" DataSetColumn="strDrinkThumb" />
+              <Mapping SourceColumn="strIngredient1" DataSetColumn="strIngredient1" />
+              <Mapping SourceColumn="strIngredient2" DataSetColumn="strIngredient2" />
+              <Mapping SourceColumn="strIngredient3" DataSetColumn="strIngredient3" />
+              <Mapping SourceColumn="strIngredient4" DataSetColumn="strIngredient4" />
+              <Mapping SourceColumn="strIngredient5" DataSetColumn="strIngredient5" />
+              <Mapping SourceColumn="strIngredient6" DataSetColumn="strIngredient6" />
+              <Mapping SourceColumn="strIngredient7" DataSetColumn="strIngredient7" />
+              <Mapping SourceColumn="strIngredient8" DataSetColumn="strIngredient8" />
+              <Mapping SourceColumn="strIngredient9" DataSetColumn="strIngredient9" />
+              <Mapping SourceColumn="strIngredient10" DataSetColumn="strIngredient10" />
+              <Mapping SourceColumn="strIngredient11" DataSetColumn="strIngredient11" />
+              <Mapping SourceColumn="strIngredient12" DataSetColumn="strIngredient12" />
+              <Mapping SourceColumn="strIngredient13" DataSetColumn="strIngredient13" />
+              <Mapping SourceColumn="strIngredient14" DataSetColumn="strIngredient14" />
+              <Mapping SourceColumn="strIngredient15" DataSetColumn="strIngredient15" />
+              <Mapping SourceColumn="strMeasure1" DataSetColumn="strMeasure1" />
+              <Mapping SourceColumn="strMeasure2" DataSetColumn="strMeasure2" />
+              <Mapping SourceColumn="strMeasure3" DataSetColumn="strMeasure3" />
+              <Mapping SourceColumn="strMeasure4" DataSetColumn="strMeasure4" />
+              <Mapping SourceColumn="strMeasure5" DataSetColumn="strMeasure5" />
+              <Mapping SourceColumn="strMeasure6" DataSetColumn="strMeasure6" />
+              <Mapping SourceColumn="strMeasure7" DataSetColumn="strMeasure7" />
+              <Mapping SourceColumn="strMeasure8" DataSetColumn="strMeasure8" />
+              <Mapping SourceColumn="strMeasure9" DataSetColumn="strMeasure9" />
+              <Mapping SourceColumn="strMeasure10" DataSetColumn="strMeasure10" />
+              <Mapping SourceColumn="strMeasure11" DataSetColumn="strMeasure11" />
+              <Mapping SourceColumn="strMeasure12" DataSetColumn="strMeasure12" />
+              <Mapping SourceColumn="strMeasure13" DataSetColumn="strMeasure13" />
+              <Mapping SourceColumn="strMeasure14" DataSetColumn="strMeasure14" />
+              <Mapping SourceColumn="strMeasure15" DataSetColumn="strMeasure15" />
+              <Mapping SourceColumn="dateModified" DataSetColumn="dateModified" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -436,7 +740,7 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)</C
   <xs:element name="BarDatabaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BarDatabaseDataSet" msprop:Generator_UserDSName="BarDatabaseDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Alcohol" msprop:Generator_TableClassName="AlcoholDataTable" msprop:Generator_TableVarName="tableAlcohol" msprop:Generator_TablePropName="Alcohol" msprop:Generator_RowDeletingName="AlcoholRowDeleting" msprop:Generator_RowChangingName="AlcoholRowChanging" msprop:Generator_RowEvHandlerName="AlcoholRowChangeEventHandler" msprop:Generator_RowDeletedName="AlcoholRowDeleted" msprop:Generator_UserTableName="Alcohol" msprop:Generator_RowChangedName="AlcoholRowChanged" msprop:Generator_RowEvArgName="AlcoholRowChangeEvent" msprop:Generator_RowClassName="AlcoholRow">
+        <xs:element name="Alcohol" msprop:Generator_TableClassName="AlcoholDataTable" msprop:Generator_TableVarName="tableAlcohol" msprop:Generator_RowChangedName="AlcoholRowChanged" msprop:Generator_TablePropName="Alcohol" msprop:Generator_RowDeletingName="AlcoholRowDeleting" msprop:Generator_RowChangingName="AlcoholRowChanging" msprop:Generator_RowEvHandlerName="AlcoholRowChangeEventHandler" msprop:Generator_RowDeletedName="AlcoholRowDeleted" msprop:Generator_RowClassName="AlcoholRow" msprop:Generator_UserTableName="Alcohol" msprop:Generator_RowEvArgName="AlcoholRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -454,7 +758,7 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)</C
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Fruit" msprop:Generator_TableClassName="FruitDataTable" msprop:Generator_TableVarName="tableFruit" msprop:Generator_TablePropName="Fruit" msprop:Generator_RowDeletingName="FruitRowDeleting" msprop:Generator_RowChangingName="FruitRowChanging" msprop:Generator_RowEvHandlerName="FruitRowChangeEventHandler" msprop:Generator_RowDeletedName="FruitRowDeleted" msprop:Generator_UserTableName="Fruit" msprop:Generator_RowChangedName="FruitRowChanged" msprop:Generator_RowEvArgName="FruitRowChangeEvent" msprop:Generator_RowClassName="FruitRow">
+        <xs:element name="Fruit" msprop:Generator_TableClassName="FruitDataTable" msprop:Generator_TableVarName="tableFruit" msprop:Generator_RowChangedName="FruitRowChanged" msprop:Generator_TablePropName="Fruit" msprop:Generator_RowDeletingName="FruitRowDeleting" msprop:Generator_RowChangingName="FruitRowChanging" msprop:Generator_RowEvHandlerName="FruitRowChangeEventHandler" msprop:Generator_RowDeletedName="FruitRowDeleted" msprop:Generator_RowClassName="FruitRow" msprop:Generator_UserTableName="Fruit" msprop:Generator_RowEvArgName="FruitRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -471,7 +775,7 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)</C
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Juice" msprop:Generator_TableClassName="JuiceDataTable" msprop:Generator_TableVarName="tableJuice" msprop:Generator_TablePropName="Juice" msprop:Generator_RowDeletingName="JuiceRowDeleting" msprop:Generator_RowChangingName="JuiceRowChanging" msprop:Generator_RowEvHandlerName="JuiceRowChangeEventHandler" msprop:Generator_RowDeletedName="JuiceRowDeleted" msprop:Generator_UserTableName="Juice" msprop:Generator_RowChangedName="JuiceRowChanged" msprop:Generator_RowEvArgName="JuiceRowChangeEvent" msprop:Generator_RowClassName="JuiceRow">
+        <xs:element name="Juice" msprop:Generator_TableClassName="JuiceDataTable" msprop:Generator_TableVarName="tableJuice" msprop:Generator_RowChangedName="JuiceRowChanged" msprop:Generator_TablePropName="Juice" msprop:Generator_RowDeletingName="JuiceRowDeleting" msprop:Generator_RowChangingName="JuiceRowChanging" msprop:Generator_RowEvHandlerName="JuiceRowChangeEventHandler" msprop:Generator_RowDeletedName="JuiceRowDeleted" msprop:Generator_RowClassName="JuiceRow" msprop:Generator_UserTableName="Juice" msprop:Generator_RowEvArgName="JuiceRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -488,7 +792,7 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)</C
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Other" msprop:Generator_TableClassName="OtherDataTable" msprop:Generator_TableVarName="tableOther" msprop:Generator_TablePropName="Other" msprop:Generator_RowDeletingName="OtherRowDeleting" msprop:Generator_RowChangingName="OtherRowChanging" msprop:Generator_RowEvHandlerName="OtherRowChangeEventHandler" msprop:Generator_RowDeletedName="OtherRowDeleted" msprop:Generator_UserTableName="Other" msprop:Generator_RowChangedName="OtherRowChanged" msprop:Generator_RowEvArgName="OtherRowChangeEvent" msprop:Generator_RowClassName="OtherRow">
+        <xs:element name="Other" msprop:Generator_TableClassName="OtherDataTable" msprop:Generator_TableVarName="tableOther" msprop:Generator_RowChangedName="OtherRowChanged" msprop:Generator_TablePropName="Other" msprop:Generator_RowDeletingName="OtherRowDeleting" msprop:Generator_RowChangingName="OtherRowChanging" msprop:Generator_RowEvHandlerName="OtherRowChangeEventHandler" msprop:Generator_RowDeletedName="OtherRowDeleted" msprop:Generator_RowClassName="OtherRow" msprop:Generator_UserTableName="Other" msprop:Generator_RowEvArgName="OtherRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -505,7 +809,7 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)</C
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Soda" msprop:Generator_TableClassName="SodaDataTable" msprop:Generator_TableVarName="tableSoda" msprop:Generator_TablePropName="Soda" msprop:Generator_RowDeletingName="SodaRowDeleting" msprop:Generator_RowChangingName="SodaRowChanging" msprop:Generator_RowEvHandlerName="SodaRowChangeEventHandler" msprop:Generator_RowDeletedName="SodaRowDeleted" msprop:Generator_UserTableName="Soda" msprop:Generator_RowChangedName="SodaRowChanged" msprop:Generator_RowEvArgName="SodaRowChangeEvent" msprop:Generator_RowClassName="SodaRow">
+        <xs:element name="Soda" msprop:Generator_TableClassName="SodaDataTable" msprop:Generator_TableVarName="tableSoda" msprop:Generator_RowChangedName="SodaRowChanged" msprop:Generator_TablePropName="Soda" msprop:Generator_RowDeletingName="SodaRowDeleting" msprop:Generator_RowChangingName="SodaRowChanging" msprop:Generator_RowEvHandlerName="SodaRowChangeEventHandler" msprop:Generator_RowDeletedName="SodaRowDeleted" msprop:Generator_RowClassName="SodaRow" msprop:Generator_UserTableName="Soda" msprop:Generator_RowEvArgName="SodaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -522,7 +826,7 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)</C
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Syrup" msprop:Generator_TableClassName="SyrupDataTable" msprop:Generator_TableVarName="tableSyrup" msprop:Generator_TablePropName="Syrup" msprop:Generator_RowDeletingName="SyrupRowDeleting" msprop:Generator_RowChangingName="SyrupRowChanging" msprop:Generator_RowEvHandlerName="SyrupRowChangeEventHandler" msprop:Generator_RowDeletedName="SyrupRowDeleted" msprop:Generator_UserTableName="Syrup" msprop:Generator_RowChangedName="SyrupRowChanged" msprop:Generator_RowEvArgName="SyrupRowChangeEvent" msprop:Generator_RowClassName="SyrupRow">
+        <xs:element name="Syrup" msprop:Generator_TableClassName="SyrupDataTable" msprop:Generator_TableVarName="tableSyrup" msprop:Generator_RowChangedName="SyrupRowChanged" msprop:Generator_TablePropName="Syrup" msprop:Generator_RowDeletingName="SyrupRowDeleting" msprop:Generator_RowChangingName="SyrupRowChanging" msprop:Generator_RowEvHandlerName="SyrupRowChangeEventHandler" msprop:Generator_RowDeletedName="SyrupRowDeleted" msprop:Generator_RowClassName="SyrupRow" msprop:Generator_UserTableName="Syrup" msprop:Generator_RowEvArgName="SyrupRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -536,6 +840,286 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)</C
               <xs:element name="Capacity" msprop:Generator_ColumnVarNameInTable="columnCapacity" msprop:Generator_ColumnPropNameInRow="Capacity" msprop:Generator_ColumnPropNameInTable="CapacityColumn" msprop:Generator_UserColumnName="Capacity" type="xs:float" minOccurs="0" />
               <xs:element name="Shelf_x0020_life" msprop:Generator_ColumnVarNameInTable="columnShelf_life" msprop:Generator_ColumnPropNameInRow="Shelf_life" msprop:Generator_ColumnPropNameInTable="Shelf_lifeColumn" msprop:Generator_UserColumnName="Shelf life" type="xs:duration" minOccurs="0" />
               <xs:element name="Price_x0020_" msprop:Generator_ColumnVarNameInTable="columnPrice_" msprop:Generator_ColumnPropNameInRow="Price_" msprop:Generator_ColumnPropNameInTable="Price_Column" msprop:Generator_UserColumnName="Price " type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Drinks" msprop:Generator_TableClassName="DrinksDataTable" msprop:Generator_TableVarName="tableDrinks" msprop:Generator_TablePropName="Drinks" msprop:Generator_RowDeletingName="DrinksRowDeleting" msprop:Generator_RowChangingName="DrinksRowChanging" msprop:Generator_RowEvHandlerName="DrinksRowChangeEventHandler" msprop:Generator_RowDeletedName="DrinksRowDeleted" msprop:Generator_UserTableName="Drinks" msprop:Generator_RowChangedName="DrinksRowChanged" msprop:Generator_RowEvArgName="DrinksRowChangeEvent" msprop:Generator_RowClassName="DrinksRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idDrink" msprop:Generator_ColumnVarNameInTable="columnidDrink" msprop:Generator_ColumnPropNameInRow="idDrink" msprop:Generator_ColumnPropNameInTable="idDrinkColumn" msprop:Generator_UserColumnName="idDrink" type="xs:int" />
+              <xs:element name="strDrink" msprop:Generator_ColumnVarNameInTable="columnstrDrink" msprop:Generator_ColumnPropNameInRow="strDrink" msprop:Generator_ColumnPropNameInTable="strDrinkColumn" msprop:Generator_UserColumnName="strDrink">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="37" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strTags" msprop:Generator_ColumnVarNameInTable="columnstrTags" msprop:Generator_ColumnPropNameInRow="strTags" msprop:Generator_ColumnPropNameInTable="strTagsColumn" msprop:Generator_UserColumnName="strTags" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="47" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strCategory" msprop:Generator_ColumnVarNameInTable="columnstrCategory" msprop:Generator_ColumnPropNameInRow="strCategory" msprop:Generator_ColumnPropNameInTable="strCategoryColumn" msprop:Generator_UserColumnName="strCategory">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIBA" msprop:Generator_ColumnVarNameInTable="columnstrIBA" msprop:Generator_ColumnPropNameInRow="strIBA" msprop:Generator_ColumnPropNameInTable="strIBAColumn" msprop:Generator_UserColumnName="strIBA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strAlcoholic" msprop:Generator_ColumnVarNameInTable="columnstrAlcoholic" msprop:Generator_ColumnPropNameInRow="strAlcoholic" msprop:Generator_ColumnPropNameInTable="strAlcoholicColumn" msprop:Generator_UserColumnName="strAlcoholic" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strGlass" msprop:Generator_ColumnVarNameInTable="columnstrGlass" msprop:Generator_ColumnPropNameInRow="strGlass" msprop:Generator_ColumnPropNameInTable="strGlassColumn" msprop:Generator_UserColumnName="strGlass">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strInstructions" msprop:Generator_ColumnVarNameInTable="columnstrInstructions" msprop:Generator_ColumnPropNameInRow="strInstructions" msprop:Generator_ColumnPropNameInTable="strInstructionsColumn" msprop:Generator_UserColumnName="strInstructions" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2524" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strDrinkThumb" msprop:Generator_ColumnVarNameInTable="columnstrDrinkThumb" msprop:Generator_ColumnPropNameInRow="strDrinkThumb" msprop:Generator_ColumnPropNameInTable="strDrinkThumbColumn" msprop:Generator_UserColumnName="strDrinkThumb">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="69" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient1" msprop:Generator_ColumnVarNameInTable="columnstrIngredient1" msprop:Generator_ColumnPropNameInRow="strIngredient1" msprop:Generator_ColumnPropNameInTable="strIngredient1Column" msprop:Generator_UserColumnName="strIngredient1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient2" msprop:Generator_ColumnVarNameInTable="columnstrIngredient2" msprop:Generator_ColumnPropNameInRow="strIngredient2" msprop:Generator_ColumnPropNameInTable="strIngredient2Column" msprop:Generator_UserColumnName="strIngredient2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient3" msprop:Generator_ColumnVarNameInTable="columnstrIngredient3" msprop:Generator_ColumnPropNameInRow="strIngredient3" msprop:Generator_ColumnPropNameInTable="strIngredient3Column" msprop:Generator_UserColumnName="strIngredient3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient4" msprop:Generator_ColumnVarNameInTable="columnstrIngredient4" msprop:Generator_ColumnPropNameInRow="strIngredient4" msprop:Generator_ColumnPropNameInTable="strIngredient4Column" msprop:Generator_UserColumnName="strIngredient4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient5" msprop:Generator_ColumnVarNameInTable="columnstrIngredient5" msprop:Generator_ColumnPropNameInRow="strIngredient5" msprop:Generator_ColumnPropNameInTable="strIngredient5Column" msprop:Generator_UserColumnName="strIngredient5" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient6" msprop:Generator_ColumnVarNameInTable="columnstrIngredient6" msprop:Generator_ColumnPropNameInRow="strIngredient6" msprop:Generator_ColumnPropNameInTable="strIngredient6Column" msprop:Generator_UserColumnName="strIngredient6" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient7" msprop:Generator_ColumnVarNameInTable="columnstrIngredient7" msprop:Generator_ColumnPropNameInRow="strIngredient7" msprop:Generator_ColumnPropNameInTable="strIngredient7Column" msprop:Generator_UserColumnName="strIngredient7" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient8" msprop:Generator_ColumnVarNameInTable="columnstrIngredient8" msprop:Generator_ColumnPropNameInRow="strIngredient8" msprop:Generator_ColumnPropNameInTable="strIngredient8Column" msprop:Generator_UserColumnName="strIngredient8" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="17" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient9" msprop:Generator_ColumnVarNameInTable="columnstrIngredient9" msprop:Generator_ColumnPropNameInRow="strIngredient9" msprop:Generator_ColumnPropNameInTable="strIngredient9Column" msprop:Generator_UserColumnName="strIngredient9" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient10" msprop:Generator_ColumnVarNameInTable="columnstrIngredient10" msprop:Generator_ColumnPropNameInRow="strIngredient10" msprop:Generator_ColumnPropNameInTable="strIngredient10Column" msprop:Generator_UserColumnName="strIngredient10" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient11" msprop:Generator_ColumnVarNameInTable="columnstrIngredient11" msprop:Generator_ColumnPropNameInRow="strIngredient11" msprop:Generator_ColumnPropNameInTable="strIngredient11Column" msprop:Generator_UserColumnName="strIngredient11" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient12" msprop:Generator_ColumnVarNameInTable="columnstrIngredient12" msprop:Generator_ColumnPropNameInRow="strIngredient12" msprop:Generator_ColumnPropNameInTable="strIngredient12Column" msprop:Generator_UserColumnName="strIngredient12" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient13" msprop:Generator_ColumnVarNameInTable="columnstrIngredient13" msprop:Generator_ColumnPropNameInRow="strIngredient13" msprop:Generator_ColumnPropNameInTable="strIngredient13Column" msprop:Generator_UserColumnName="strIngredient13" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient14" msprop:Generator_ColumnVarNameInTable="columnstrIngredient14" msprop:Generator_ColumnPropNameInRow="strIngredient14" msprop:Generator_ColumnPropNameInTable="strIngredient14Column" msprop:Generator_UserColumnName="strIngredient14" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strIngredient15" msprop:Generator_ColumnVarNameInTable="columnstrIngredient15" msprop:Generator_ColumnPropNameInRow="strIngredient15" msprop:Generator_ColumnPropNameInTable="strIngredient15Column" msprop:Generator_UserColumnName="strIngredient15" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure1" msprop:Generator_ColumnVarNameInTable="columnstrMeasure1" msprop:Generator_ColumnPropNameInRow="strMeasure1" msprop:Generator_ColumnPropNameInTable="strMeasure1Column" msprop:Generator_UserColumnName="strMeasure1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="19" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure2" msprop:Generator_ColumnVarNameInTable="columnstrMeasure2" msprop:Generator_ColumnPropNameInRow="strMeasure2" msprop:Generator_ColumnPropNameInTable="strMeasure2Column" msprop:Generator_UserColumnName="strMeasure2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="39" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure3" msprop:Generator_ColumnVarNameInTable="columnstrMeasure3" msprop:Generator_ColumnPropNameInRow="strMeasure3" msprop:Generator_ColumnPropNameInTable="strMeasure3Column" msprop:Generator_UserColumnName="strMeasure3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure4" msprop:Generator_ColumnVarNameInTable="columnstrMeasure4" msprop:Generator_ColumnPropNameInRow="strMeasure4" msprop:Generator_ColumnPropNameInTable="strMeasure4Column" msprop:Generator_UserColumnName="strMeasure4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure5" msprop:Generator_ColumnVarNameInTable="columnstrMeasure5" msprop:Generator_ColumnPropNameInRow="strMeasure5" msprop:Generator_ColumnPropNameInTable="strMeasure5Column" msprop:Generator_UserColumnName="strMeasure5" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure6" msprop:Generator_ColumnVarNameInTable="columnstrMeasure6" msprop:Generator_ColumnPropNameInRow="strMeasure6" msprop:Generator_ColumnPropNameInTable="strMeasure6Column" msprop:Generator_UserColumnName="strMeasure6" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="17" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure7" msprop:Generator_ColumnVarNameInTable="columnstrMeasure7" msprop:Generator_ColumnPropNameInRow="strMeasure7" msprop:Generator_ColumnPropNameInTable="strMeasure7Column" msprop:Generator_UserColumnName="strMeasure7" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="22" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure8" msprop:Generator_ColumnVarNameInTable="columnstrMeasure8" msprop:Generator_ColumnPropNameInRow="strMeasure8" msprop:Generator_ColumnPropNameInTable="strMeasure8Column" msprop:Generator_UserColumnName="strMeasure8" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure9" msprop:Generator_ColumnVarNameInTable="columnstrMeasure9" msprop:Generator_ColumnPropNameInRow="strMeasure9" msprop:Generator_ColumnPropNameInTable="strMeasure9Column" msprop:Generator_UserColumnName="strMeasure9" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="19" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure10" msprop:Generator_ColumnVarNameInTable="columnstrMeasure10" msprop:Generator_ColumnPropNameInRow="strMeasure10" msprop:Generator_ColumnPropNameInTable="strMeasure10Column" msprop:Generator_UserColumnName="strMeasure10" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure11" msprop:Generator_ColumnVarNameInTable="columnstrMeasure11" msprop:Generator_ColumnPropNameInRow="strMeasure11" msprop:Generator_ColumnPropNameInTable="strMeasure11Column" msprop:Generator_UserColumnName="strMeasure11" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure12" msprop:Generator_ColumnVarNameInTable="columnstrMeasure12" msprop:Generator_ColumnPropNameInRow="strMeasure12" msprop:Generator_ColumnPropNameInTable="strMeasure12Column" msprop:Generator_UserColumnName="strMeasure12" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure13" msprop:Generator_ColumnVarNameInTable="columnstrMeasure13" msprop:Generator_ColumnPropNameInRow="strMeasure13" msprop:Generator_ColumnPropNameInTable="strMeasure13Column" msprop:Generator_UserColumnName="strMeasure13" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure14" msprop:Generator_ColumnVarNameInTable="columnstrMeasure14" msprop:Generator_ColumnPropNameInRow="strMeasure14" msprop:Generator_ColumnPropNameInTable="strMeasure14Column" msprop:Generator_UserColumnName="strMeasure14" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strMeasure15" msprop:Generator_ColumnVarNameInTable="columnstrMeasure15" msprop:Generator_ColumnPropNameInRow="strMeasure15" msprop:Generator_ColumnPropNameInTable="strMeasure15Column" msprop:Generator_UserColumnName="strMeasure15" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dateModified" msprop:Generator_ColumnVarNameInTable="columndateModified" msprop:Generator_ColumnPropNameInRow="dateModified" msprop:Generator_ColumnPropNameInTable="dateModifiedColumn" msprop:Generator_UserColumnName="dateModified" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="19" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -564,6 +1148,10 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)</C
     <xs:unique name="Syrup_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Syrup" />
       <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="Drinks_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Drinks" />
+      <xs:field xpath="mstns:idDrink" />
     </xs:unique>
   </xs:element>
 </xs:schema>

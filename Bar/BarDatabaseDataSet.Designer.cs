@@ -36,6 +36,8 @@ namespace Bar {
         
         private SyrupDataTable tableSyrup;
         
+        private DrinksDataTable tableDrinks;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -81,6 +83,9 @@ namespace Bar {
                 }
                 if ((ds.Tables["Syrup"] != null)) {
                     base.Tables.Add(new SyrupDataTable(ds.Tables["Syrup"]));
+                }
+                if ((ds.Tables["Drinks"] != null)) {
+                    base.Tables.Add(new DrinksDataTable(ds.Tables["Drinks"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -157,6 +162,16 @@ namespace Bar {
         public SyrupDataTable Syrup {
             get {
                 return this.tableSyrup;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DrinksDataTable Drinks {
+            get {
+                return this.tableDrinks;
             }
         }
         
@@ -245,6 +260,9 @@ namespace Bar {
                 if ((ds.Tables["Syrup"] != null)) {
                     base.Tables.Add(new SyrupDataTable(ds.Tables["Syrup"]));
                 }
+                if ((ds.Tables["Drinks"] != null)) {
+                    base.Tables.Add(new DrinksDataTable(ds.Tables["Drinks"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -314,6 +332,12 @@ namespace Bar {
                     this.tableSyrup.InitVars();
                 }
             }
+            this.tableDrinks = ((DrinksDataTable)(base.Tables["Drinks"]));
+            if ((initTable == true)) {
+                if ((this.tableDrinks != null)) {
+                    this.tableDrinks.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -336,6 +360,8 @@ namespace Bar {
             base.Tables.Add(this.tableSoda);
             this.tableSyrup = new SyrupDataTable();
             base.Tables.Add(this.tableSyrup);
+            this.tableDrinks = new DrinksDataTable();
+            base.Tables.Add(this.tableDrinks);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -371,6 +397,12 @@ namespace Bar {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeSyrup() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeDrinks() {
             return false;
         }
         
@@ -446,6 +478,9 @@ namespace Bar {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void SyrupRowChangeEventHandler(object sender, SyrupRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void DrinksRowChangeEventHandler(object sender, DrinksRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2358,6 +2393,895 @@ namespace Bar {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DrinksDataTable : global::System.Data.TypedTableBase<DrinksRow> {
+            
+            private global::System.Data.DataColumn columnidDrink;
+            
+            private global::System.Data.DataColumn columnstrDrink;
+            
+            private global::System.Data.DataColumn columnstrTags;
+            
+            private global::System.Data.DataColumn columnstrCategory;
+            
+            private global::System.Data.DataColumn columnstrIBA;
+            
+            private global::System.Data.DataColumn columnstrAlcoholic;
+            
+            private global::System.Data.DataColumn columnstrGlass;
+            
+            private global::System.Data.DataColumn columnstrInstructions;
+            
+            private global::System.Data.DataColumn columnstrDrinkThumb;
+            
+            private global::System.Data.DataColumn columnstrIngredient1;
+            
+            private global::System.Data.DataColumn columnstrIngredient2;
+            
+            private global::System.Data.DataColumn columnstrIngredient3;
+            
+            private global::System.Data.DataColumn columnstrIngredient4;
+            
+            private global::System.Data.DataColumn columnstrIngredient5;
+            
+            private global::System.Data.DataColumn columnstrIngredient6;
+            
+            private global::System.Data.DataColumn columnstrIngredient7;
+            
+            private global::System.Data.DataColumn columnstrIngredient8;
+            
+            private global::System.Data.DataColumn columnstrIngredient9;
+            
+            private global::System.Data.DataColumn columnstrIngredient10;
+            
+            private global::System.Data.DataColumn columnstrIngredient11;
+            
+            private global::System.Data.DataColumn columnstrIngredient12;
+            
+            private global::System.Data.DataColumn columnstrIngredient13;
+            
+            private global::System.Data.DataColumn columnstrIngredient14;
+            
+            private global::System.Data.DataColumn columnstrIngredient15;
+            
+            private global::System.Data.DataColumn columnstrMeasure1;
+            
+            private global::System.Data.DataColumn columnstrMeasure2;
+            
+            private global::System.Data.DataColumn columnstrMeasure3;
+            
+            private global::System.Data.DataColumn columnstrMeasure4;
+            
+            private global::System.Data.DataColumn columnstrMeasure5;
+            
+            private global::System.Data.DataColumn columnstrMeasure6;
+            
+            private global::System.Data.DataColumn columnstrMeasure7;
+            
+            private global::System.Data.DataColumn columnstrMeasure8;
+            
+            private global::System.Data.DataColumn columnstrMeasure9;
+            
+            private global::System.Data.DataColumn columnstrMeasure10;
+            
+            private global::System.Data.DataColumn columnstrMeasure11;
+            
+            private global::System.Data.DataColumn columnstrMeasure12;
+            
+            private global::System.Data.DataColumn columnstrMeasure13;
+            
+            private global::System.Data.DataColumn columnstrMeasure14;
+            
+            private global::System.Data.DataColumn columnstrMeasure15;
+            
+            private global::System.Data.DataColumn columndateModified;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DrinksDataTable() {
+                this.TableName = "Drinks";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal DrinksDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected DrinksDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idDrinkColumn {
+                get {
+                    return this.columnidDrink;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strDrinkColumn {
+                get {
+                    return this.columnstrDrink;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strTagsColumn {
+                get {
+                    return this.columnstrTags;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strCategoryColumn {
+                get {
+                    return this.columnstrCategory;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIBAColumn {
+                get {
+                    return this.columnstrIBA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strAlcoholicColumn {
+                get {
+                    return this.columnstrAlcoholic;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strGlassColumn {
+                get {
+                    return this.columnstrGlass;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strInstructionsColumn {
+                get {
+                    return this.columnstrInstructions;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strDrinkThumbColumn {
+                get {
+                    return this.columnstrDrinkThumb;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient1Column {
+                get {
+                    return this.columnstrIngredient1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient2Column {
+                get {
+                    return this.columnstrIngredient2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient3Column {
+                get {
+                    return this.columnstrIngredient3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient4Column {
+                get {
+                    return this.columnstrIngredient4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient5Column {
+                get {
+                    return this.columnstrIngredient5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient6Column {
+                get {
+                    return this.columnstrIngredient6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient7Column {
+                get {
+                    return this.columnstrIngredient7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient8Column {
+                get {
+                    return this.columnstrIngredient8;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient9Column {
+                get {
+                    return this.columnstrIngredient9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient10Column {
+                get {
+                    return this.columnstrIngredient10;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient11Column {
+                get {
+                    return this.columnstrIngredient11;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient12Column {
+                get {
+                    return this.columnstrIngredient12;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient13Column {
+                get {
+                    return this.columnstrIngredient13;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient14Column {
+                get {
+                    return this.columnstrIngredient14;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strIngredient15Column {
+                get {
+                    return this.columnstrIngredient15;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure1Column {
+                get {
+                    return this.columnstrMeasure1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure2Column {
+                get {
+                    return this.columnstrMeasure2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure3Column {
+                get {
+                    return this.columnstrMeasure3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure4Column {
+                get {
+                    return this.columnstrMeasure4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure5Column {
+                get {
+                    return this.columnstrMeasure5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure6Column {
+                get {
+                    return this.columnstrMeasure6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure7Column {
+                get {
+                    return this.columnstrMeasure7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure8Column {
+                get {
+                    return this.columnstrMeasure8;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure9Column {
+                get {
+                    return this.columnstrMeasure9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure10Column {
+                get {
+                    return this.columnstrMeasure10;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure11Column {
+                get {
+                    return this.columnstrMeasure11;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure12Column {
+                get {
+                    return this.columnstrMeasure12;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure13Column {
+                get {
+                    return this.columnstrMeasure13;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure14Column {
+                get {
+                    return this.columnstrMeasure14;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn strMeasure15Column {
+                get {
+                    return this.columnstrMeasure15;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dateModifiedColumn {
+                get {
+                    return this.columndateModified;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DrinksRow this[int index] {
+                get {
+                    return ((DrinksRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event DrinksRowChangeEventHandler DrinksRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event DrinksRowChangeEventHandler DrinksRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event DrinksRowChangeEventHandler DrinksRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event DrinksRowChangeEventHandler DrinksRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddDrinksRow(DrinksRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DrinksRow AddDrinksRow(
+                        int idDrink, 
+                        string strDrink, 
+                        string strTags, 
+                        string strCategory, 
+                        string strIBA, 
+                        string strAlcoholic, 
+                        string strGlass, 
+                        string strInstructions, 
+                        string strDrinkThumb, 
+                        string strIngredient1, 
+                        string strIngredient2, 
+                        string strIngredient3, 
+                        string strIngredient4, 
+                        string strIngredient5, 
+                        string strIngredient6, 
+                        string strIngredient7, 
+                        string strIngredient8, 
+                        string strIngredient9, 
+                        string strIngredient10, 
+                        string strIngredient11, 
+                        string strIngredient12, 
+                        string strIngredient13, 
+                        string strIngredient14, 
+                        string strIngredient15, 
+                        string strMeasure1, 
+                        string strMeasure2, 
+                        string strMeasure3, 
+                        string strMeasure4, 
+                        string strMeasure5, 
+                        string strMeasure6, 
+                        string strMeasure7, 
+                        string strMeasure8, 
+                        string strMeasure9, 
+                        string strMeasure10, 
+                        string strMeasure11, 
+                        string strMeasure12, 
+                        string strMeasure13, 
+                        string strMeasure14, 
+                        string strMeasure15, 
+                        string dateModified) {
+                DrinksRow rowDrinksRow = ((DrinksRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        idDrink,
+                        strDrink,
+                        strTags,
+                        strCategory,
+                        strIBA,
+                        strAlcoholic,
+                        strGlass,
+                        strInstructions,
+                        strDrinkThumb,
+                        strIngredient1,
+                        strIngredient2,
+                        strIngredient3,
+                        strIngredient4,
+                        strIngredient5,
+                        strIngredient6,
+                        strIngredient7,
+                        strIngredient8,
+                        strIngredient9,
+                        strIngredient10,
+                        strIngredient11,
+                        strIngredient12,
+                        strIngredient13,
+                        strIngredient14,
+                        strIngredient15,
+                        strMeasure1,
+                        strMeasure2,
+                        strMeasure3,
+                        strMeasure4,
+                        strMeasure5,
+                        strMeasure6,
+                        strMeasure7,
+                        strMeasure8,
+                        strMeasure9,
+                        strMeasure10,
+                        strMeasure11,
+                        strMeasure12,
+                        strMeasure13,
+                        strMeasure14,
+                        strMeasure15,
+                        dateModified};
+                rowDrinksRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDrinksRow);
+                return rowDrinksRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DrinksRow FindByidDrink(int idDrink) {
+                return ((DrinksRow)(this.Rows.Find(new object[] {
+                            idDrink})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DrinksDataTable cln = ((DrinksDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DrinksDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnidDrink = base.Columns["idDrink"];
+                this.columnstrDrink = base.Columns["strDrink"];
+                this.columnstrTags = base.Columns["strTags"];
+                this.columnstrCategory = base.Columns["strCategory"];
+                this.columnstrIBA = base.Columns["strIBA"];
+                this.columnstrAlcoholic = base.Columns["strAlcoholic"];
+                this.columnstrGlass = base.Columns["strGlass"];
+                this.columnstrInstructions = base.Columns["strInstructions"];
+                this.columnstrDrinkThumb = base.Columns["strDrinkThumb"];
+                this.columnstrIngredient1 = base.Columns["strIngredient1"];
+                this.columnstrIngredient2 = base.Columns["strIngredient2"];
+                this.columnstrIngredient3 = base.Columns["strIngredient3"];
+                this.columnstrIngredient4 = base.Columns["strIngredient4"];
+                this.columnstrIngredient5 = base.Columns["strIngredient5"];
+                this.columnstrIngredient6 = base.Columns["strIngredient6"];
+                this.columnstrIngredient7 = base.Columns["strIngredient7"];
+                this.columnstrIngredient8 = base.Columns["strIngredient8"];
+                this.columnstrIngredient9 = base.Columns["strIngredient9"];
+                this.columnstrIngredient10 = base.Columns["strIngredient10"];
+                this.columnstrIngredient11 = base.Columns["strIngredient11"];
+                this.columnstrIngredient12 = base.Columns["strIngredient12"];
+                this.columnstrIngredient13 = base.Columns["strIngredient13"];
+                this.columnstrIngredient14 = base.Columns["strIngredient14"];
+                this.columnstrIngredient15 = base.Columns["strIngredient15"];
+                this.columnstrMeasure1 = base.Columns["strMeasure1"];
+                this.columnstrMeasure2 = base.Columns["strMeasure2"];
+                this.columnstrMeasure3 = base.Columns["strMeasure3"];
+                this.columnstrMeasure4 = base.Columns["strMeasure4"];
+                this.columnstrMeasure5 = base.Columns["strMeasure5"];
+                this.columnstrMeasure6 = base.Columns["strMeasure6"];
+                this.columnstrMeasure7 = base.Columns["strMeasure7"];
+                this.columnstrMeasure8 = base.Columns["strMeasure8"];
+                this.columnstrMeasure9 = base.Columns["strMeasure9"];
+                this.columnstrMeasure10 = base.Columns["strMeasure10"];
+                this.columnstrMeasure11 = base.Columns["strMeasure11"];
+                this.columnstrMeasure12 = base.Columns["strMeasure12"];
+                this.columnstrMeasure13 = base.Columns["strMeasure13"];
+                this.columnstrMeasure14 = base.Columns["strMeasure14"];
+                this.columnstrMeasure15 = base.Columns["strMeasure15"];
+                this.columndateModified = base.Columns["dateModified"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnidDrink = new global::System.Data.DataColumn("idDrink", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidDrink);
+                this.columnstrDrink = new global::System.Data.DataColumn("strDrink", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrDrink);
+                this.columnstrTags = new global::System.Data.DataColumn("strTags", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrTags);
+                this.columnstrCategory = new global::System.Data.DataColumn("strCategory", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrCategory);
+                this.columnstrIBA = new global::System.Data.DataColumn("strIBA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIBA);
+                this.columnstrAlcoholic = new global::System.Data.DataColumn("strAlcoholic", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrAlcoholic);
+                this.columnstrGlass = new global::System.Data.DataColumn("strGlass", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrGlass);
+                this.columnstrInstructions = new global::System.Data.DataColumn("strInstructions", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrInstructions);
+                this.columnstrDrinkThumb = new global::System.Data.DataColumn("strDrinkThumb", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrDrinkThumb);
+                this.columnstrIngredient1 = new global::System.Data.DataColumn("strIngredient1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient1);
+                this.columnstrIngredient2 = new global::System.Data.DataColumn("strIngredient2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient2);
+                this.columnstrIngredient3 = new global::System.Data.DataColumn("strIngredient3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient3);
+                this.columnstrIngredient4 = new global::System.Data.DataColumn("strIngredient4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient4);
+                this.columnstrIngredient5 = new global::System.Data.DataColumn("strIngredient5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient5);
+                this.columnstrIngredient6 = new global::System.Data.DataColumn("strIngredient6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient6);
+                this.columnstrIngredient7 = new global::System.Data.DataColumn("strIngredient7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient7);
+                this.columnstrIngredient8 = new global::System.Data.DataColumn("strIngredient8", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient8);
+                this.columnstrIngredient9 = new global::System.Data.DataColumn("strIngredient9", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient9);
+                this.columnstrIngredient10 = new global::System.Data.DataColumn("strIngredient10", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient10);
+                this.columnstrIngredient11 = new global::System.Data.DataColumn("strIngredient11", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient11);
+                this.columnstrIngredient12 = new global::System.Data.DataColumn("strIngredient12", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient12);
+                this.columnstrIngredient13 = new global::System.Data.DataColumn("strIngredient13", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient13);
+                this.columnstrIngredient14 = new global::System.Data.DataColumn("strIngredient14", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient14);
+                this.columnstrIngredient15 = new global::System.Data.DataColumn("strIngredient15", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrIngredient15);
+                this.columnstrMeasure1 = new global::System.Data.DataColumn("strMeasure1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure1);
+                this.columnstrMeasure2 = new global::System.Data.DataColumn("strMeasure2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure2);
+                this.columnstrMeasure3 = new global::System.Data.DataColumn("strMeasure3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure3);
+                this.columnstrMeasure4 = new global::System.Data.DataColumn("strMeasure4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure4);
+                this.columnstrMeasure5 = new global::System.Data.DataColumn("strMeasure5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure5);
+                this.columnstrMeasure6 = new global::System.Data.DataColumn("strMeasure6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure6);
+                this.columnstrMeasure7 = new global::System.Data.DataColumn("strMeasure7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure7);
+                this.columnstrMeasure8 = new global::System.Data.DataColumn("strMeasure8", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure8);
+                this.columnstrMeasure9 = new global::System.Data.DataColumn("strMeasure9", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure9);
+                this.columnstrMeasure10 = new global::System.Data.DataColumn("strMeasure10", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure10);
+                this.columnstrMeasure11 = new global::System.Data.DataColumn("strMeasure11", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure11);
+                this.columnstrMeasure12 = new global::System.Data.DataColumn("strMeasure12", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure12);
+                this.columnstrMeasure13 = new global::System.Data.DataColumn("strMeasure13", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure13);
+                this.columnstrMeasure14 = new global::System.Data.DataColumn("strMeasure14", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure14);
+                this.columnstrMeasure15 = new global::System.Data.DataColumn("strMeasure15", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrMeasure15);
+                this.columndateModified = new global::System.Data.DataColumn("dateModified", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndateModified);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidDrink}, true));
+                this.columnidDrink.AllowDBNull = false;
+                this.columnidDrink.Unique = true;
+                this.columnstrDrink.AllowDBNull = false;
+                this.columnstrDrink.MaxLength = 37;
+                this.columnstrTags.MaxLength = 47;
+                this.columnstrCategory.AllowDBNull = false;
+                this.columnstrCategory.MaxLength = 20;
+                this.columnstrIBA.MaxLength = 21;
+                this.columnstrAlcoholic.MaxLength = 16;
+                this.columnstrGlass.AllowDBNull = false;
+                this.columnstrGlass.MaxLength = 24;
+                this.columnstrInstructions.MaxLength = 2524;
+                this.columnstrDrinkThumb.AllowDBNull = false;
+                this.columnstrDrinkThumb.MaxLength = 69;
+                this.columnstrIngredient1.AllowDBNull = false;
+                this.columnstrIngredient1.MaxLength = 26;
+                this.columnstrIngredient2.AllowDBNull = false;
+                this.columnstrIngredient2.MaxLength = 26;
+                this.columnstrIngredient3.MaxLength = 26;
+                this.columnstrIngredient4.MaxLength = 21;
+                this.columnstrIngredient5.MaxLength = 24;
+                this.columnstrIngredient6.MaxLength = 26;
+                this.columnstrIngredient7.MaxLength = 20;
+                this.columnstrIngredient8.MaxLength = 17;
+                this.columnstrIngredient9.MaxLength = 13;
+                this.columnstrIngredient10.MaxLength = 13;
+                this.columnstrIngredient11.MaxLength = 13;
+                this.columnstrIngredient12.MaxLength = 13;
+                this.columnstrIngredient13.MaxLength = 30;
+                this.columnstrIngredient14.MaxLength = 30;
+                this.columnstrIngredient15.MaxLength = 30;
+                this.columnstrMeasure1.MaxLength = 19;
+                this.columnstrMeasure2.MaxLength = 39;
+                this.columnstrMeasure3.MaxLength = 24;
+                this.columnstrMeasure4.MaxLength = 21;
+                this.columnstrMeasure5.MaxLength = 25;
+                this.columnstrMeasure6.MaxLength = 17;
+                this.columnstrMeasure7.MaxLength = 22;
+                this.columnstrMeasure8.MaxLength = 15;
+                this.columnstrMeasure9.MaxLength = 19;
+                this.columnstrMeasure10.MaxLength = 13;
+                this.columnstrMeasure11.MaxLength = 14;
+                this.columnstrMeasure12.MaxLength = 13;
+                this.columnstrMeasure13.MaxLength = 1;
+                this.columnstrMeasure14.MaxLength = 1;
+                this.columnstrMeasure15.MaxLength = 1;
+                this.columndateModified.MaxLength = 19;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DrinksRow NewDrinksRow() {
+                return ((DrinksRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DrinksRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DrinksRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DrinksRowChanged != null)) {
+                    this.DrinksRowChanged(this, new DrinksRowChangeEvent(((DrinksRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DrinksRowChanging != null)) {
+                    this.DrinksRowChanging(this, new DrinksRowChangeEvent(((DrinksRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DrinksRowDeleted != null)) {
+                    this.DrinksRowDeleted(this, new DrinksRowChangeEvent(((DrinksRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DrinksRowDeleting != null)) {
+                    this.DrinksRowDeleting(this, new DrinksRowChangeEvent(((DrinksRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveDrinksRow(DrinksRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                BarDatabaseDataSet ds = new BarDatabaseDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DrinksDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class AlcoholRow : global::System.Data.DataRow {
@@ -3112,6 +4036,1022 @@ namespace Bar {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DrinksRow : global::System.Data.DataRow {
+            
+            private DrinksDataTable tableDrinks;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal DrinksRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDrinks = ((DrinksDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int idDrink {
+                get {
+                    return ((int)(this[this.tableDrinks.idDrinkColumn]));
+                }
+                set {
+                    this[this.tableDrinks.idDrinkColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strDrink {
+                get {
+                    return ((string)(this[this.tableDrinks.strDrinkColumn]));
+                }
+                set {
+                    this[this.tableDrinks.strDrinkColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strTags {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strTagsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strTags\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strTagsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strCategory {
+                get {
+                    return ((string)(this[this.tableDrinks.strCategoryColumn]));
+                }
+                set {
+                    this[this.tableDrinks.strCategoryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIBA {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strIBAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strIBA\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strIBAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strAlcoholic {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strAlcoholicColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strAlcoholic\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strAlcoholicColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strGlass {
+                get {
+                    return ((string)(this[this.tableDrinks.strGlassColumn]));
+                }
+                set {
+                    this[this.tableDrinks.strGlassColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strInstructions {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strInstructionsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strInstructions\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strInstructionsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strDrinkThumb {
+                get {
+                    return ((string)(this[this.tableDrinks.strDrinkThumbColumn]));
+                }
+                set {
+                    this[this.tableDrinks.strDrinkThumbColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient1 {
+                get {
+                    return ((string)(this[this.tableDrinks.strIngredient1Column]));
+                }
+                set {
+                    this[this.tableDrinks.strIngredient1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient2 {
+                get {
+                    return ((string)(this[this.tableDrinks.strIngredient2Column]));
+                }
+                set {
+                    this[this.tableDrinks.strIngredient2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strIngredient3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strIngredient3\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strIngredient3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strIngredient4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strIngredient4\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strIngredient4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient5 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strIngredient5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strIngredient5\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strIngredient5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient6 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strIngredient6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strIngredient6\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strIngredient6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient7 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strIngredient7Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strIngredient7\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strIngredient7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient8 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strIngredient8Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strIngredient8\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strIngredient8Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient9 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strIngredient9Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strIngredient9\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strIngredient9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient10 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strIngredient10Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strIngredient10\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strIngredient10Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient11 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strIngredient11Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strIngredient11\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strIngredient11Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient12 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strIngredient12Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strIngredient12\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strIngredient12Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient13 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strIngredient13Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strIngredient13\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strIngredient13Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient14 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strIngredient14Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strIngredient14\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strIngredient14Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strIngredient15 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strIngredient15Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strIngredient15\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strIngredient15Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure1\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure2\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure3\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure4\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure5 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure5\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure6 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure6\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure7 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure7Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure7\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure8 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure8Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure8\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure8Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure9 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure9Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure9\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure10 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure10Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure10\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure10Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure11 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure11Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure11\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure11Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure12 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure12Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure12\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure12Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure13 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure13Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure13\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure13Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure14 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure14Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure14\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure14Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string strMeasure15 {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.strMeasure15Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strMeasure15\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.strMeasure15Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string dateModified {
+                get {
+                    try {
+                        return ((string)(this[this.tableDrinks.dateModifiedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'dateModified\' in table \'Drinks\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDrinks.dateModifiedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrTagsNull() {
+                return this.IsNull(this.tableDrinks.strTagsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrTagsNull() {
+                this[this.tableDrinks.strTagsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrIBANull() {
+                return this.IsNull(this.tableDrinks.strIBAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrIBANull() {
+                this[this.tableDrinks.strIBAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrAlcoholicNull() {
+                return this.IsNull(this.tableDrinks.strAlcoholicColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrAlcoholicNull() {
+                this[this.tableDrinks.strAlcoholicColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrInstructionsNull() {
+                return this.IsNull(this.tableDrinks.strInstructionsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrInstructionsNull() {
+                this[this.tableDrinks.strInstructionsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrIngredient3Null() {
+                return this.IsNull(this.tableDrinks.strIngredient3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrIngredient3Null() {
+                this[this.tableDrinks.strIngredient3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrIngredient4Null() {
+                return this.IsNull(this.tableDrinks.strIngredient4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrIngredient4Null() {
+                this[this.tableDrinks.strIngredient4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrIngredient5Null() {
+                return this.IsNull(this.tableDrinks.strIngredient5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrIngredient5Null() {
+                this[this.tableDrinks.strIngredient5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrIngredient6Null() {
+                return this.IsNull(this.tableDrinks.strIngredient6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrIngredient6Null() {
+                this[this.tableDrinks.strIngredient6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrIngredient7Null() {
+                return this.IsNull(this.tableDrinks.strIngredient7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrIngredient7Null() {
+                this[this.tableDrinks.strIngredient7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrIngredient8Null() {
+                return this.IsNull(this.tableDrinks.strIngredient8Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrIngredient8Null() {
+                this[this.tableDrinks.strIngredient8Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrIngredient9Null() {
+                return this.IsNull(this.tableDrinks.strIngredient9Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrIngredient9Null() {
+                this[this.tableDrinks.strIngredient9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrIngredient10Null() {
+                return this.IsNull(this.tableDrinks.strIngredient10Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrIngredient10Null() {
+                this[this.tableDrinks.strIngredient10Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrIngredient11Null() {
+                return this.IsNull(this.tableDrinks.strIngredient11Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrIngredient11Null() {
+                this[this.tableDrinks.strIngredient11Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrIngredient12Null() {
+                return this.IsNull(this.tableDrinks.strIngredient12Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrIngredient12Null() {
+                this[this.tableDrinks.strIngredient12Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrIngredient13Null() {
+                return this.IsNull(this.tableDrinks.strIngredient13Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrIngredient13Null() {
+                this[this.tableDrinks.strIngredient13Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrIngredient14Null() {
+                return this.IsNull(this.tableDrinks.strIngredient14Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrIngredient14Null() {
+                this[this.tableDrinks.strIngredient14Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrIngredient15Null() {
+                return this.IsNull(this.tableDrinks.strIngredient15Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrIngredient15Null() {
+                this[this.tableDrinks.strIngredient15Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure1Null() {
+                return this.IsNull(this.tableDrinks.strMeasure1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure1Null() {
+                this[this.tableDrinks.strMeasure1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure2Null() {
+                return this.IsNull(this.tableDrinks.strMeasure2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure2Null() {
+                this[this.tableDrinks.strMeasure2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure3Null() {
+                return this.IsNull(this.tableDrinks.strMeasure3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure3Null() {
+                this[this.tableDrinks.strMeasure3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure4Null() {
+                return this.IsNull(this.tableDrinks.strMeasure4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure4Null() {
+                this[this.tableDrinks.strMeasure4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure5Null() {
+                return this.IsNull(this.tableDrinks.strMeasure5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure5Null() {
+                this[this.tableDrinks.strMeasure5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure6Null() {
+                return this.IsNull(this.tableDrinks.strMeasure6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure6Null() {
+                this[this.tableDrinks.strMeasure6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure7Null() {
+                return this.IsNull(this.tableDrinks.strMeasure7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure7Null() {
+                this[this.tableDrinks.strMeasure7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure8Null() {
+                return this.IsNull(this.tableDrinks.strMeasure8Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure8Null() {
+                this[this.tableDrinks.strMeasure8Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure9Null() {
+                return this.IsNull(this.tableDrinks.strMeasure9Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure9Null() {
+                this[this.tableDrinks.strMeasure9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure10Null() {
+                return this.IsNull(this.tableDrinks.strMeasure10Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure10Null() {
+                this[this.tableDrinks.strMeasure10Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure11Null() {
+                return this.IsNull(this.tableDrinks.strMeasure11Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure11Null() {
+                this[this.tableDrinks.strMeasure11Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure12Null() {
+                return this.IsNull(this.tableDrinks.strMeasure12Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure12Null() {
+                this[this.tableDrinks.strMeasure12Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure13Null() {
+                return this.IsNull(this.tableDrinks.strMeasure13Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure13Null() {
+                this[this.tableDrinks.strMeasure13Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure14Null() {
+                return this.IsNull(this.tableDrinks.strMeasure14Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure14Null() {
+                this[this.tableDrinks.strMeasure14Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstrMeasure15Null() {
+                return this.IsNull(this.tableDrinks.strMeasure15Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstrMeasure15Null() {
+                this[this.tableDrinks.strMeasure15Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsdateModifiedNull() {
+                return this.IsNull(this.tableDrinks.dateModifiedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetdateModifiedNull() {
+                this[this.tableDrinks.dateModifiedColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -3301,6 +5241,40 @@ namespace Bar {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SyrupRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class DrinksRowChangeEvent : global::System.EventArgs {
+            
+            private DrinksRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DrinksRowChangeEvent(DrinksRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DrinksRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5899,6 +7873,2004 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)";
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class DrinksTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public DrinksTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Drinks";
+            tableMapping.ColumnMappings.Add("idDrink", "idDrink");
+            tableMapping.ColumnMappings.Add("strDrink", "strDrink");
+            tableMapping.ColumnMappings.Add("strTags", "strTags");
+            tableMapping.ColumnMappings.Add("strCategory", "strCategory");
+            tableMapping.ColumnMappings.Add("strIBA", "strIBA");
+            tableMapping.ColumnMappings.Add("strAlcoholic", "strAlcoholic");
+            tableMapping.ColumnMappings.Add("strGlass", "strGlass");
+            tableMapping.ColumnMappings.Add("strInstructions", "strInstructions");
+            tableMapping.ColumnMappings.Add("strDrinkThumb", "strDrinkThumb");
+            tableMapping.ColumnMappings.Add("strIngredient1", "strIngredient1");
+            tableMapping.ColumnMappings.Add("strIngredient2", "strIngredient2");
+            tableMapping.ColumnMappings.Add("strIngredient3", "strIngredient3");
+            tableMapping.ColumnMappings.Add("strIngredient4", "strIngredient4");
+            tableMapping.ColumnMappings.Add("strIngredient5", "strIngredient5");
+            tableMapping.ColumnMappings.Add("strIngredient6", "strIngredient6");
+            tableMapping.ColumnMappings.Add("strIngredient7", "strIngredient7");
+            tableMapping.ColumnMappings.Add("strIngredient8", "strIngredient8");
+            tableMapping.ColumnMappings.Add("strIngredient9", "strIngredient9");
+            tableMapping.ColumnMappings.Add("strIngredient10", "strIngredient10");
+            tableMapping.ColumnMappings.Add("strIngredient11", "strIngredient11");
+            tableMapping.ColumnMappings.Add("strIngredient12", "strIngredient12");
+            tableMapping.ColumnMappings.Add("strIngredient13", "strIngredient13");
+            tableMapping.ColumnMappings.Add("strIngredient14", "strIngredient14");
+            tableMapping.ColumnMappings.Add("strIngredient15", "strIngredient15");
+            tableMapping.ColumnMappings.Add("strMeasure1", "strMeasure1");
+            tableMapping.ColumnMappings.Add("strMeasure2", "strMeasure2");
+            tableMapping.ColumnMappings.Add("strMeasure3", "strMeasure3");
+            tableMapping.ColumnMappings.Add("strMeasure4", "strMeasure4");
+            tableMapping.ColumnMappings.Add("strMeasure5", "strMeasure5");
+            tableMapping.ColumnMappings.Add("strMeasure6", "strMeasure6");
+            tableMapping.ColumnMappings.Add("strMeasure7", "strMeasure7");
+            tableMapping.ColumnMappings.Add("strMeasure8", "strMeasure8");
+            tableMapping.ColumnMappings.Add("strMeasure9", "strMeasure9");
+            tableMapping.ColumnMappings.Add("strMeasure10", "strMeasure10");
+            tableMapping.ColumnMappings.Add("strMeasure11", "strMeasure11");
+            tableMapping.ColumnMappings.Add("strMeasure12", "strMeasure12");
+            tableMapping.ColumnMappings.Add("strMeasure13", "strMeasure13");
+            tableMapping.ColumnMappings.Add("strMeasure14", "strMeasure14");
+            tableMapping.ColumnMappings.Add("strMeasure15", "strMeasure15");
+            tableMapping.ColumnMappings.Add("dateModified", "dateModified");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Drinks] WHERE (([idDrink] = @Original_idDrink) AND ([strDrink]" +
+                " = @Original_strDrink) AND ((@IsNull_strTags = 1 AND [strTags] IS NULL) OR ([str" +
+                "Tags] = @Original_strTags)) AND ([strCategory] = @Original_strCategory) AND ((@I" +
+                "sNull_strIBA = 1 AND [strIBA] IS NULL) OR ([strIBA] = @Original_strIBA)) AND ((@" +
+                "IsNull_strAlcoholic = 1 AND [strAlcoholic] IS NULL) OR ([strAlcoholic] = @Origin" +
+                "al_strAlcoholic)) AND ([strGlass] = @Original_strGlass) AND ((@IsNull_strInstruc" +
+                "tions = 1 AND [strInstructions] IS NULL) OR ([strInstructions] = @Original_strIn" +
+                "structions)) AND ([strDrinkThumb] = @Original_strDrinkThumb) AND ([strIngredient" +
+                "1] = @Original_strIngredient1) AND ([strIngredient2] = @Original_strIngredient2)" +
+                " AND ((@IsNull_strIngredient3 = 1 AND [strIngredient3] IS NULL) OR ([strIngredie" +
+                "nt3] = @Original_strIngredient3)) AND ((@IsNull_strIngredient4 = 1 AND [strIngre" +
+                "dient4] IS NULL) OR ([strIngredient4] = @Original_strIngredient4)) AND ((@IsNull" +
+                "_strIngredient5 = 1 AND [strIngredient5] IS NULL) OR ([strIngredient5] = @Origin" +
+                "al_strIngredient5)) AND ((@IsNull_strIngredient6 = 1 AND [strIngredient6] IS NUL" +
+                "L) OR ([strIngredient6] = @Original_strIngredient6)) AND ((@IsNull_strIngredient" +
+                "7 = 1 AND [strIngredient7] IS NULL) OR ([strIngredient7] = @Original_strIngredie" +
+                "nt7)) AND ((@IsNull_strIngredient8 = 1 AND [strIngredient8] IS NULL) OR ([strIng" +
+                "redient8] = @Original_strIngredient8)) AND ((@IsNull_strIngredient9 = 1 AND [str" +
+                "Ingredient9] IS NULL) OR ([strIngredient9] = @Original_strIngredient9)) AND ((@I" +
+                "sNull_strIngredient10 = 1 AND [strIngredient10] IS NULL) OR ([strIngredient10] =" +
+                " @Original_strIngredient10)) AND ((@IsNull_strIngredient11 = 1 AND [strIngredien" +
+                "t11] IS NULL) OR ([strIngredient11] = @Original_strIngredient11)) AND ((@IsNull_" +
+                "strIngredient12 = 1 AND [strIngredient12] IS NULL) OR ([strIngredient12] = @Orig" +
+                "inal_strIngredient12)) AND ((@IsNull_strIngredient13 = 1 AND [strIngredient13] I" +
+                "S NULL) OR ([strIngredient13] = @Original_strIngredient13)) AND ((@IsNull_strIng" +
+                "redient14 = 1 AND [strIngredient14] IS NULL) OR ([strIngredient14] = @Original_s" +
+                "trIngredient14)) AND ((@IsNull_strIngredient15 = 1 AND [strIngredient15] IS NULL" +
+                ") OR ([strIngredient15] = @Original_strIngredient15)) AND ((@IsNull_strMeasure1 " +
+                "= 1 AND [strMeasure1] IS NULL) OR ([strMeasure1] = @Original_strMeasure1)) AND (" +
+                "(@IsNull_strMeasure2 = 1 AND [strMeasure2] IS NULL) OR ([strMeasure2] = @Origina" +
+                "l_strMeasure2)) AND ((@IsNull_strMeasure3 = 1 AND [strMeasure3] IS NULL) OR ([st" +
+                "rMeasure3] = @Original_strMeasure3)) AND ((@IsNull_strMeasure4 = 1 AND [strMeasu" +
+                "re4] IS NULL) OR ([strMeasure4] = @Original_strMeasure4)) AND ((@IsNull_strMeasu" +
+                "re5 = 1 AND [strMeasure5] IS NULL) OR ([strMeasure5] = @Original_strMeasure5)) A" +
+                "ND ((@IsNull_strMeasure6 = 1 AND [strMeasure6] IS NULL) OR ([strMeasure6] = @Ori" +
+                "ginal_strMeasure6)) AND ((@IsNull_strMeasure7 = 1 AND [strMeasure7] IS NULL) OR " +
+                "([strMeasure7] = @Original_strMeasure7)) AND ((@IsNull_strMeasure8 = 1 AND [strM" +
+                "easure8] IS NULL) OR ([strMeasure8] = @Original_strMeasure8)) AND ((@IsNull_strM" +
+                "easure9 = 1 AND [strMeasure9] IS NULL) OR ([strMeasure9] = @Original_strMeasure9" +
+                ")) AND ((@IsNull_strMeasure10 = 1 AND [strMeasure10] IS NULL) OR ([strMeasure10]" +
+                " = @Original_strMeasure10)) AND ((@IsNull_strMeasure11 = 1 AND [strMeasure11] IS" +
+                " NULL) OR ([strMeasure11] = @Original_strMeasure11)) AND ((@IsNull_strMeasure12 " +
+                "= 1 AND [strMeasure12] IS NULL) OR ([strMeasure12] = @Original_strMeasure12)) AN" +
+                "D ((@IsNull_strMeasure13 = 1 AND [strMeasure13] IS NULL) OR ([strMeasure13] = @O" +
+                "riginal_strMeasure13)) AND ((@IsNull_strMeasure14 = 1 AND [strMeasure14] IS NULL" +
+                ") OR ([strMeasure14] = @Original_strMeasure14)) AND ((@IsNull_strMeasure15 = 1 A" +
+                "ND [strMeasure15] IS NULL) OR ([strMeasure15] = @Original_strMeasure15)) AND ((@" +
+                "IsNull_dateModified = 1 AND [dateModified] IS NULL) OR ([dateModified] = @Origin" +
+                "al_dateModified)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idDrink", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idDrink", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strDrink", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strDrink", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strTags", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strTags", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strTags", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strTags", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strCategory", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strCategory", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIBA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIBA", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIBA", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIBA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strAlcoholic", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strAlcoholic", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strAlcoholic", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strAlcoholic", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strGlass", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strGlass", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strInstructions", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strInstructions", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strInstructions", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strInstructions", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strDrinkThumb", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strDrinkThumb", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient4", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient5", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient5", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient6", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient6", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient6", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient7", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient7", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient7", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient7", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient8", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient8", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient8", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient8", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient9", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient9", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient9", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient10", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient10", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient10", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient11", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient11", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient11", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient11", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient12", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient12", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient12", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient12", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient13", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient13", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient13", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient13", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient14", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient14", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient14", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient14", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient15", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient15", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient15", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient15", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure4", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure5", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure5", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure6", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure6", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure6", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure7", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure7", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure7", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure7", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure8", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure8", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure8", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure8", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure9", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure9", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure9", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure10", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure10", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure10", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure11", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure11", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure11", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure11", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure12", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure12", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure12", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure12", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure13", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure13", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure13", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure13", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure14", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure14", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure14", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure14", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure15", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure15", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure15", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure15", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dateModified", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateModified", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dateModified", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateModified", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Drinks] ([idDrink], [strDrink], [strTags], [strCategory], [str" +
+                "IBA], [strAlcoholic], [strGlass], [strInstructions], [strDrinkThumb], [strIngred" +
+                "ient1], [strIngredient2], [strIngredient3], [strIngredient4], [strIngredient5], " +
+                "[strIngredient6], [strIngredient7], [strIngredient8], [strIngredient9], [strIngr" +
+                "edient10], [strIngredient11], [strIngredient12], [strIngredient13], [strIngredie" +
+                "nt14], [strIngredient15], [strMeasure1], [strMeasure2], [strMeasure3], [strMeasu" +
+                "re4], [strMeasure5], [strMeasure6], [strMeasure7], [strMeasure8], [strMeasure9]," +
+                " [strMeasure10], [strMeasure11], [strMeasure12], [strMeasure13], [strMeasure14]," +
+                " [strMeasure15], [dateModified]) VALUES (@idDrink, @strDrink, @strTags, @strCate" +
+                "gory, @strIBA, @strAlcoholic, @strGlass, @strInstructions, @strDrinkThumb, @strI" +
+                "ngredient1, @strIngredient2, @strIngredient3, @strIngredient4, @strIngredient5, " +
+                "@strIngredient6, @strIngredient7, @strIngredient8, @strIngredient9, @strIngredie" +
+                "nt10, @strIngredient11, @strIngredient12, @strIngredient13, @strIngredient14, @s" +
+                "trIngredient15, @strMeasure1, @strMeasure2, @strMeasure3, @strMeasure4, @strMeas" +
+                "ure5, @strMeasure6, @strMeasure7, @strMeasure8, @strMeasure9, @strMeasure10, @st" +
+                "rMeasure11, @strMeasure12, @strMeasure13, @strMeasure14, @strMeasure15, @dateMod" +
+                "ified);\r\nSELECT idDrink, strDrink, strTags, strCategory, strIBA, strAlcoholic, s" +
+                "trGlass, strInstructions, strDrinkThumb, strIngredient1, strIngredient2, strIngr" +
+                "edient3, strIngredient4, strIngredient5, strIngredient6, strIngredient7, strIngr" +
+                "edient8, strIngredient9, strIngredient10, strIngredient11, strIngredient12, strI" +
+                "ngredient13, strIngredient14, strIngredient15, strMeasure1, strMeasure2, strMeas" +
+                "ure3, strMeasure4, strMeasure5, strMeasure6, strMeasure7, strMeasure8, strMeasur" +
+                "e9, strMeasure10, strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMea" +
+                "sure15, dateModified FROM Drinks WHERE (idDrink = @idDrink)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idDrink", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idDrink", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strDrink", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strDrink", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strTags", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strTags", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strCategory", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strCategory", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIBA", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIBA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strAlcoholic", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strAlcoholic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strGlass", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strGlass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strInstructions", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strInstructions", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strDrinkThumb", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strDrinkThumb", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient7", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient8", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient8", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient9", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient10", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient11", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient11", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient12", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient12", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient13", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient13", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient14", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient14", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient15", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure7", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure8", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure8", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure9", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure10", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure11", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure11", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure12", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure12", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure13", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure13", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure14", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure14", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure15", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateModified", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateModified", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Drinks] SET [idDrink] = @idDrink, [strDrink] = @strDrink, [strTags]" +
+                " = @strTags, [strCategory] = @strCategory, [strIBA] = @strIBA, [strAlcoholic] = " +
+                "@strAlcoholic, [strGlass] = @strGlass, [strInstructions] = @strInstructions, [st" +
+                "rDrinkThumb] = @strDrinkThumb, [strIngredient1] = @strIngredient1, [strIngredien" +
+                "t2] = @strIngredient2, [strIngredient3] = @strIngredient3, [strIngredient4] = @s" +
+                "trIngredient4, [strIngredient5] = @strIngredient5, [strIngredient6] = @strIngred" +
+                "ient6, [strIngredient7] = @strIngredient7, [strIngredient8] = @strIngredient8, [" +
+                "strIngredient9] = @strIngredient9, [strIngredient10] = @strIngredient10, [strIng" +
+                "redient11] = @strIngredient11, [strIngredient12] = @strIngredient12, [strIngredi" +
+                "ent13] = @strIngredient13, [strIngredient14] = @strIngredient14, [strIngredient1" +
+                "5] = @strIngredient15, [strMeasure1] = @strMeasure1, [strMeasure2] = @strMeasure" +
+                "2, [strMeasure3] = @strMeasure3, [strMeasure4] = @strMeasure4, [strMeasure5] = @" +
+                "strMeasure5, [strMeasure6] = @strMeasure6, [strMeasure7] = @strMeasure7, [strMea" +
+                "sure8] = @strMeasure8, [strMeasure9] = @strMeasure9, [strMeasure10] = @strMeasur" +
+                "e10, [strMeasure11] = @strMeasure11, [strMeasure12] = @strMeasure12, [strMeasure" +
+                "13] = @strMeasure13, [strMeasure14] = @strMeasure14, [strMeasure15] = @strMeasur" +
+                "e15, [dateModified] = @dateModified WHERE (([idDrink] = @Original_idDrink) AND (" +
+                "[strDrink] = @Original_strDrink) AND ((@IsNull_strTags = 1 AND [strTags] IS NULL" +
+                ") OR ([strTags] = @Original_strTags)) AND ([strCategory] = @Original_strCategory" +
+                ") AND ((@IsNull_strIBA = 1 AND [strIBA] IS NULL) OR ([strIBA] = @Original_strIBA" +
+                ")) AND ((@IsNull_strAlcoholic = 1 AND [strAlcoholic] IS NULL) OR ([strAlcoholic]" +
+                " = @Original_strAlcoholic)) AND ([strGlass] = @Original_strGlass) AND ((@IsNull_" +
+                "strInstructions = 1 AND [strInstructions] IS NULL) OR ([strInstructions] = @Orig" +
+                "inal_strInstructions)) AND ([strDrinkThumb] = @Original_strDrinkThumb) AND ([str" +
+                "Ingredient1] = @Original_strIngredient1) AND ([strIngredient2] = @Original_strIn" +
+                "gredient2) AND ((@IsNull_strIngredient3 = 1 AND [strIngredient3] IS NULL) OR ([s" +
+                "trIngredient3] = @Original_strIngredient3)) AND ((@IsNull_strIngredient4 = 1 AND" +
+                " [strIngredient4] IS NULL) OR ([strIngredient4] = @Original_strIngredient4)) AND" +
+                " ((@IsNull_strIngredient5 = 1 AND [strIngredient5] IS NULL) OR ([strIngredient5]" +
+                " = @Original_strIngredient5)) AND ((@IsNull_strIngredient6 = 1 AND [strIngredien" +
+                "t6] IS NULL) OR ([strIngredient6] = @Original_strIngredient6)) AND ((@IsNull_str" +
+                "Ingredient7 = 1 AND [strIngredient7] IS NULL) OR ([strIngredient7] = @Original_s" +
+                "trIngredient7)) AND ((@IsNull_strIngredient8 = 1 AND [strIngredient8] IS NULL) O" +
+                "R ([strIngredient8] = @Original_strIngredient8)) AND ((@IsNull_strIngredient9 = " +
+                "1 AND [strIngredient9] IS NULL) OR ([strIngredient9] = @Original_strIngredient9)" +
+                ") AND ((@IsNull_strIngredient10 = 1 AND [strIngredient10] IS NULL) OR ([strIngre" +
+                "dient10] = @Original_strIngredient10)) AND ((@IsNull_strIngredient11 = 1 AND [st" +
+                "rIngredient11] IS NULL) OR ([strIngredient11] = @Original_strIngredient11)) AND " +
+                "((@IsNull_strIngredient12 = 1 AND [strIngredient12] IS NULL) OR ([strIngredient1" +
+                "2] = @Original_strIngredient12)) AND ((@IsNull_strIngredient13 = 1 AND [strIngre" +
+                "dient13] IS NULL) OR ([strIngredient13] = @Original_strIngredient13)) AND ((@IsN" +
+                "ull_strIngredient14 = 1 AND [strIngredient14] IS NULL) OR ([strIngredient14] = @" +
+                "Original_strIngredient14)) AND ((@IsNull_strIngredient15 = 1 AND [strIngredient1" +
+                "5] IS NULL) OR ([strIngredient15] = @Original_strIngredient15)) AND ((@IsNull_st" +
+                "rMeasure1 = 1 AND [strMeasure1] IS NULL) OR ([strMeasure1] = @Original_strMeasur" +
+                "e1)) AND ((@IsNull_strMeasure2 = 1 AND [strMeasure2] IS NULL) OR ([strMeasure2] " +
+                "= @Original_strMeasure2)) AND ((@IsNull_strMeasure3 = 1 AND [strMeasure3] IS NUL" +
+                "L) OR ([strMeasure3] = @Original_strMeasure3)) AND ((@IsNull_strMeasure4 = 1 AND" +
+                " [strMeasure4] IS NULL) OR ([strMeasure4] = @Original_strMeasure4)) AND ((@IsNul" +
+                "l_strMeasure5 = 1 AND [strMeasure5] IS NULL) OR ([strMeasure5] = @Original_strMe" +
+                "asure5)) AND ((@IsNull_strMeasure6 = 1 AND [strMeasure6] IS NULL) OR ([strMeasur" +
+                "e6] = @Original_strMeasure6)) AND ((@IsNull_strMeasure7 = 1 AND [strMeasure7] IS" +
+                " NULL) OR ([strMeasure7] = @Original_strMeasure7)) AND ((@IsNull_strMeasure8 = 1" +
+                " AND [strMeasure8] IS NULL) OR ([strMeasure8] = @Original_strMeasure8)) AND ((@I" +
+                "sNull_strMeasure9 = 1 AND [strMeasure9] IS NULL) OR ([strMeasure9] = @Original_s" +
+                "trMeasure9)) AND ((@IsNull_strMeasure10 = 1 AND [strMeasure10] IS NULL) OR ([str" +
+                "Measure10] = @Original_strMeasure10)) AND ((@IsNull_strMeasure11 = 1 AND [strMea" +
+                "sure11] IS NULL) OR ([strMeasure11] = @Original_strMeasure11)) AND ((@IsNull_str" +
+                "Measure12 = 1 AND [strMeasure12] IS NULL) OR ([strMeasure12] = @Original_strMeas" +
+                "ure12)) AND ((@IsNull_strMeasure13 = 1 AND [strMeasure13] IS NULL) OR ([strMeasu" +
+                "re13] = @Original_strMeasure13)) AND ((@IsNull_strMeasure14 = 1 AND [strMeasure1" +
+                "4] IS NULL) OR ([strMeasure14] = @Original_strMeasure14)) AND ((@IsNull_strMeasu" +
+                "re15 = 1 AND [strMeasure15] IS NULL) OR ([strMeasure15] = @Original_strMeasure15" +
+                ")) AND ((@IsNull_dateModified = 1 AND [dateModified] IS NULL) OR ([dateModified]" +
+                " = @Original_dateModified)));\r\nSELECT idDrink, strDrink, strTags, strCategory, s" +
+                "trIBA, strAlcoholic, strGlass, strInstructions, strDrinkThumb, strIngredient1, s" +
+                "trIngredient2, strIngredient3, strIngredient4, strIngredient5, strIngredient6, s" +
+                "trIngredient7, strIngredient8, strIngredient9, strIngredient10, strIngredient11," +
+                " strIngredient12, strIngredient13, strIngredient14, strIngredient15, strMeasure1" +
+                ", strMeasure2, strMeasure3, strMeasure4, strMeasure5, strMeasure6, strMeasure7, " +
+                "strMeasure8, strMeasure9, strMeasure10, strMeasure11, strMeasure12, strMeasure13" +
+                ", strMeasure14, strMeasure15, dateModified FROM Drinks WHERE (idDrink = @idDrink" +
+                ")";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idDrink", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idDrink", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strDrink", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strDrink", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strTags", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strTags", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strCategory", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strCategory", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIBA", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIBA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strAlcoholic", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strAlcoholic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strGlass", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strGlass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strInstructions", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strInstructions", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strDrinkThumb", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strDrinkThumb", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient7", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient8", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient8", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient9", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient10", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient11", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient11", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient12", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient12", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient13", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient13", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient14", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient14", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient15", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure7", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure8", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure8", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure9", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure10", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure11", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure11", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure12", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure12", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure13", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure13", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure14", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure14", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strMeasure15", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateModified", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateModified", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idDrink", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idDrink", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strDrink", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strDrink", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strTags", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strTags", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strTags", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strTags", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strCategory", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strCategory", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIBA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIBA", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIBA", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIBA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strAlcoholic", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strAlcoholic", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strAlcoholic", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strAlcoholic", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strGlass", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strGlass", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strInstructions", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strInstructions", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strInstructions", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strInstructions", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strDrinkThumb", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strDrinkThumb", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient4", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient5", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient5", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient6", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient6", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient6", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient7", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient7", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient7", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient7", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient8", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient8", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient8", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient8", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient9", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient9", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient9", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient10", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient10", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient10", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient11", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient11", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient11", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient11", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient12", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient12", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient12", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient12", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient13", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient13", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient13", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient13", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient14", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient14", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient14", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient14", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strIngredient15", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient15", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient15", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient15", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure4", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure5", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure5", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure6", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure6", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure6", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure7", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure7", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure7", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure7", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure8", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure8", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure8", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure8", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure9", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure9", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure9", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure10", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure10", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure10", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure11", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure11", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure11", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure11", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure12", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure12", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure12", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure12", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure13", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure13", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure13", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure13", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure14", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure14", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure14", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure14", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_strMeasure15", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure15", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strMeasure15", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strMeasure15", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dateModified", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateModified", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dateModified", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateModified", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Bar.Properties.Settings.Default.BarDatabaseConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT idDrink, strDrink, strTags, strCategory, strIBA, strAlcoholic, strGlass, strInstructions, strDrinkThumb, strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5, strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10, strIngredient11, strIngredient12, strIngredient13, strIngredient14, strIngredient15, strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5, strMeasure6, strMeasure7, strMeasure8, strMeasure9, strMeasure10, strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15, dateModified FROM dbo.Drinks";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(BarDatabaseDataSet.DrinksDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual BarDatabaseDataSet.DrinksDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            BarDatabaseDataSet.DrinksDataTable dataTable = new BarDatabaseDataSet.DrinksDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(BarDatabaseDataSet.DrinksDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(BarDatabaseDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Drinks");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(
+                    int Original_idDrink, 
+                    string Original_strDrink, 
+                    string Original_strTags, 
+                    string Original_strCategory, 
+                    string Original_strIBA, 
+                    string Original_strAlcoholic, 
+                    string Original_strGlass, 
+                    string Original_strInstructions, 
+                    string Original_strDrinkThumb, 
+                    string Original_strIngredient1, 
+                    string Original_strIngredient2, 
+                    string Original_strIngredient3, 
+                    string Original_strIngredient4, 
+                    string Original_strIngredient5, 
+                    string Original_strIngredient6, 
+                    string Original_strIngredient7, 
+                    string Original_strIngredient8, 
+                    string Original_strIngredient9, 
+                    string Original_strIngredient10, 
+                    string Original_strIngredient11, 
+                    string Original_strIngredient12, 
+                    string Original_strIngredient13, 
+                    string Original_strIngredient14, 
+                    string Original_strIngredient15, 
+                    string Original_strMeasure1, 
+                    string Original_strMeasure2, 
+                    string Original_strMeasure3, 
+                    string Original_strMeasure4, 
+                    string Original_strMeasure5, 
+                    string Original_strMeasure6, 
+                    string Original_strMeasure7, 
+                    string Original_strMeasure8, 
+                    string Original_strMeasure9, 
+                    string Original_strMeasure10, 
+                    string Original_strMeasure11, 
+                    string Original_strMeasure12, 
+                    string Original_strMeasure13, 
+                    string Original_strMeasure14, 
+                    string Original_strMeasure15, 
+                    string Original_dateModified) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idDrink));
+            if ((Original_strDrink == null)) {
+                throw new global::System.ArgumentNullException("Original_strDrink");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_strDrink));
+            }
+            if ((Original_strTags == null)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_strTags));
+            }
+            if ((Original_strCategory == null)) {
+                throw new global::System.ArgumentNullException("Original_strCategory");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_strCategory));
+            }
+            if ((Original_strIBA == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_strIBA));
+            }
+            if ((Original_strAlcoholic == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_strAlcoholic));
+            }
+            if ((Original_strGlass == null)) {
+                throw new global::System.ArgumentNullException("Original_strGlass");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_strGlass));
+            }
+            if ((Original_strInstructions == null)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_strInstructions));
+            }
+            if ((Original_strDrinkThumb == null)) {
+                throw new global::System.ArgumentNullException("Original_strDrinkThumb");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_strDrinkThumb));
+            }
+            if ((Original_strIngredient1 == null)) {
+                throw new global::System.ArgumentNullException("Original_strIngredient1");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_strIngredient1));
+            }
+            if ((Original_strIngredient2 == null)) {
+                throw new global::System.ArgumentNullException("Original_strIngredient2");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_strIngredient2));
+            }
+            if ((Original_strIngredient3 == null)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_strIngredient3));
+            }
+            if ((Original_strIngredient4 == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_strIngredient4));
+            }
+            if ((Original_strIngredient5 == null)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_strIngredient5));
+            }
+            if ((Original_strIngredient6 == null)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_strIngredient6));
+            }
+            if ((Original_strIngredient7 == null)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_strIngredient7));
+            }
+            if ((Original_strIngredient8 == null)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_strIngredient8));
+            }
+            if ((Original_strIngredient9 == null)) {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_strIngredient9));
+            }
+            if ((Original_strIngredient10 == null)) {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_strIngredient10));
+            }
+            if ((Original_strIngredient11 == null)) {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_strIngredient11));
+            }
+            if ((Original_strIngredient12 == null)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_strIngredient12));
+            }
+            if ((Original_strIngredient13 == null)) {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((string)(Original_strIngredient13));
+            }
+            if ((Original_strIngredient14 == null)) {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((string)(Original_strIngredient14));
+            }
+            if ((Original_strIngredient15 == null)) {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((string)(Original_strIngredient15));
+            }
+            if ((Original_strMeasure1 == null)) {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((string)(Original_strMeasure1));
+            }
+            if ((Original_strMeasure2 == null)) {
+                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[44].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[44].Value = ((string)(Original_strMeasure2));
+            }
+            if ((Original_strMeasure3 == null)) {
+                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[46].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[46].Value = ((string)(Original_strMeasure3));
+            }
+            if ((Original_strMeasure4 == null)) {
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[48].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[48].Value = ((string)(Original_strMeasure4));
+            }
+            if ((Original_strMeasure5 == null)) {
+                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[50].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[50].Value = ((string)(Original_strMeasure5));
+            }
+            if ((Original_strMeasure6 == null)) {
+                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[52].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[52].Value = ((string)(Original_strMeasure6));
+            }
+            if ((Original_strMeasure7 == null)) {
+                this.Adapter.DeleteCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[54].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[54].Value = ((string)(Original_strMeasure7));
+            }
+            if ((Original_strMeasure8 == null)) {
+                this.Adapter.DeleteCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[56].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[56].Value = ((string)(Original_strMeasure8));
+            }
+            if ((Original_strMeasure9 == null)) {
+                this.Adapter.DeleteCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[58].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[58].Value = ((string)(Original_strMeasure9));
+            }
+            if ((Original_strMeasure10 == null)) {
+                this.Adapter.DeleteCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[60].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[60].Value = ((string)(Original_strMeasure10));
+            }
+            if ((Original_strMeasure11 == null)) {
+                this.Adapter.DeleteCommand.Parameters[61].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[62].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[62].Value = ((string)(Original_strMeasure11));
+            }
+            if ((Original_strMeasure12 == null)) {
+                this.Adapter.DeleteCommand.Parameters[63].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[64].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[64].Value = ((string)(Original_strMeasure12));
+            }
+            if ((Original_strMeasure13 == null)) {
+                this.Adapter.DeleteCommand.Parameters[65].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[66].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[65].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[66].Value = ((string)(Original_strMeasure13));
+            }
+            if ((Original_strMeasure14 == null)) {
+                this.Adapter.DeleteCommand.Parameters[67].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[68].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[67].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[68].Value = ((string)(Original_strMeasure14));
+            }
+            if ((Original_strMeasure15 == null)) {
+                this.Adapter.DeleteCommand.Parameters[69].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[70].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[69].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[70].Value = ((string)(Original_strMeasure15));
+            }
+            if ((Original_dateModified == null)) {
+                this.Adapter.DeleteCommand.Parameters[71].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[72].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[71].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[72].Value = ((string)(Original_dateModified));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(
+                    int idDrink, 
+                    string strDrink, 
+                    string strTags, 
+                    string strCategory, 
+                    string strIBA, 
+                    string strAlcoholic, 
+                    string strGlass, 
+                    string strInstructions, 
+                    string strDrinkThumb, 
+                    string strIngredient1, 
+                    string strIngredient2, 
+                    string strIngredient3, 
+                    string strIngredient4, 
+                    string strIngredient5, 
+                    string strIngredient6, 
+                    string strIngredient7, 
+                    string strIngredient8, 
+                    string strIngredient9, 
+                    string strIngredient10, 
+                    string strIngredient11, 
+                    string strIngredient12, 
+                    string strIngredient13, 
+                    string strIngredient14, 
+                    string strIngredient15, 
+                    string strMeasure1, 
+                    string strMeasure2, 
+                    string strMeasure3, 
+                    string strMeasure4, 
+                    string strMeasure5, 
+                    string strMeasure6, 
+                    string strMeasure7, 
+                    string strMeasure8, 
+                    string strMeasure9, 
+                    string strMeasure10, 
+                    string strMeasure11, 
+                    string strMeasure12, 
+                    string strMeasure13, 
+                    string strMeasure14, 
+                    string strMeasure15, 
+                    string dateModified) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idDrink));
+            if ((strDrink == null)) {
+                throw new global::System.ArgumentNullException("strDrink");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(strDrink));
+            }
+            if ((strTags == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(strTags));
+            }
+            if ((strCategory == null)) {
+                throw new global::System.ArgumentNullException("strCategory");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(strCategory));
+            }
+            if ((strIBA == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(strIBA));
+            }
+            if ((strAlcoholic == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(strAlcoholic));
+            }
+            if ((strGlass == null)) {
+                throw new global::System.ArgumentNullException("strGlass");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(strGlass));
+            }
+            if ((strInstructions == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(strInstructions));
+            }
+            if ((strDrinkThumb == null)) {
+                throw new global::System.ArgumentNullException("strDrinkThumb");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(strDrinkThumb));
+            }
+            if ((strIngredient1 == null)) {
+                throw new global::System.ArgumentNullException("strIngredient1");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(strIngredient1));
+            }
+            if ((strIngredient2 == null)) {
+                throw new global::System.ArgumentNullException("strIngredient2");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(strIngredient2));
+            }
+            if ((strIngredient3 == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(strIngredient3));
+            }
+            if ((strIngredient4 == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(strIngredient4));
+            }
+            if ((strIngredient5 == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(strIngredient5));
+            }
+            if ((strIngredient6 == null)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(strIngredient6));
+            }
+            if ((strIngredient7 == null)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(strIngredient7));
+            }
+            if ((strIngredient8 == null)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(strIngredient8));
+            }
+            if ((strIngredient9 == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(strIngredient9));
+            }
+            if ((strIngredient10 == null)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(strIngredient10));
+            }
+            if ((strIngredient11 == null)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(strIngredient11));
+            }
+            if ((strIngredient12 == null)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(strIngredient12));
+            }
+            if ((strIngredient13 == null)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(strIngredient13));
+            }
+            if ((strIngredient14 == null)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(strIngredient14));
+            }
+            if ((strIngredient15 == null)) {
+                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(strIngredient15));
+            }
+            if ((strMeasure1 == null)) {
+                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(strMeasure1));
+            }
+            if ((strMeasure2 == null)) {
+                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(strMeasure2));
+            }
+            if ((strMeasure3 == null)) {
+                this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(strMeasure3));
+            }
+            if ((strMeasure4 == null)) {
+                this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(strMeasure4));
+            }
+            if ((strMeasure5 == null)) {
+                this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(strMeasure5));
+            }
+            if ((strMeasure6 == null)) {
+                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[29].Value = ((string)(strMeasure6));
+            }
+            if ((strMeasure7 == null)) {
+                this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[30].Value = ((string)(strMeasure7));
+            }
+            if ((strMeasure8 == null)) {
+                this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[31].Value = ((string)(strMeasure8));
+            }
+            if ((strMeasure9 == null)) {
+                this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[32].Value = ((string)(strMeasure9));
+            }
+            if ((strMeasure10 == null)) {
+                this.Adapter.InsertCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[33].Value = ((string)(strMeasure10));
+            }
+            if ((strMeasure11 == null)) {
+                this.Adapter.InsertCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[34].Value = ((string)(strMeasure11));
+            }
+            if ((strMeasure12 == null)) {
+                this.Adapter.InsertCommand.Parameters[35].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[35].Value = ((string)(strMeasure12));
+            }
+            if ((strMeasure13 == null)) {
+                this.Adapter.InsertCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[36].Value = ((string)(strMeasure13));
+            }
+            if ((strMeasure14 == null)) {
+                this.Adapter.InsertCommand.Parameters[37].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[37].Value = ((string)(strMeasure14));
+            }
+            if ((strMeasure15 == null)) {
+                this.Adapter.InsertCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[38].Value = ((string)(strMeasure15));
+            }
+            if ((dateModified == null)) {
+                this.Adapter.InsertCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[39].Value = ((string)(dateModified));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    int idDrink, 
+                    string strDrink, 
+                    string strTags, 
+                    string strCategory, 
+                    string strIBA, 
+                    string strAlcoholic, 
+                    string strGlass, 
+                    string strInstructions, 
+                    string strDrinkThumb, 
+                    string strIngredient1, 
+                    string strIngredient2, 
+                    string strIngredient3, 
+                    string strIngredient4, 
+                    string strIngredient5, 
+                    string strIngredient6, 
+                    string strIngredient7, 
+                    string strIngredient8, 
+                    string strIngredient9, 
+                    string strIngredient10, 
+                    string strIngredient11, 
+                    string strIngredient12, 
+                    string strIngredient13, 
+                    string strIngredient14, 
+                    string strIngredient15, 
+                    string strMeasure1, 
+                    string strMeasure2, 
+                    string strMeasure3, 
+                    string strMeasure4, 
+                    string strMeasure5, 
+                    string strMeasure6, 
+                    string strMeasure7, 
+                    string strMeasure8, 
+                    string strMeasure9, 
+                    string strMeasure10, 
+                    string strMeasure11, 
+                    string strMeasure12, 
+                    string strMeasure13, 
+                    string strMeasure14, 
+                    string strMeasure15, 
+                    string dateModified, 
+                    int Original_idDrink, 
+                    string Original_strDrink, 
+                    string Original_strTags, 
+                    string Original_strCategory, 
+                    string Original_strIBA, 
+                    string Original_strAlcoholic, 
+                    string Original_strGlass, 
+                    string Original_strInstructions, 
+                    string Original_strDrinkThumb, 
+                    string Original_strIngredient1, 
+                    string Original_strIngredient2, 
+                    string Original_strIngredient3, 
+                    string Original_strIngredient4, 
+                    string Original_strIngredient5, 
+                    string Original_strIngredient6, 
+                    string Original_strIngredient7, 
+                    string Original_strIngredient8, 
+                    string Original_strIngredient9, 
+                    string Original_strIngredient10, 
+                    string Original_strIngredient11, 
+                    string Original_strIngredient12, 
+                    string Original_strIngredient13, 
+                    string Original_strIngredient14, 
+                    string Original_strIngredient15, 
+                    string Original_strMeasure1, 
+                    string Original_strMeasure2, 
+                    string Original_strMeasure3, 
+                    string Original_strMeasure4, 
+                    string Original_strMeasure5, 
+                    string Original_strMeasure6, 
+                    string Original_strMeasure7, 
+                    string Original_strMeasure8, 
+                    string Original_strMeasure9, 
+                    string Original_strMeasure10, 
+                    string Original_strMeasure11, 
+                    string Original_strMeasure12, 
+                    string Original_strMeasure13, 
+                    string Original_strMeasure14, 
+                    string Original_strMeasure15, 
+                    string Original_dateModified) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idDrink));
+            if ((strDrink == null)) {
+                throw new global::System.ArgumentNullException("strDrink");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(strDrink));
+            }
+            if ((strTags == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(strTags));
+            }
+            if ((strCategory == null)) {
+                throw new global::System.ArgumentNullException("strCategory");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(strCategory));
+            }
+            if ((strIBA == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(strIBA));
+            }
+            if ((strAlcoholic == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(strAlcoholic));
+            }
+            if ((strGlass == null)) {
+                throw new global::System.ArgumentNullException("strGlass");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(strGlass));
+            }
+            if ((strInstructions == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(strInstructions));
+            }
+            if ((strDrinkThumb == null)) {
+                throw new global::System.ArgumentNullException("strDrinkThumb");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(strDrinkThumb));
+            }
+            if ((strIngredient1 == null)) {
+                throw new global::System.ArgumentNullException("strIngredient1");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(strIngredient1));
+            }
+            if ((strIngredient2 == null)) {
+                throw new global::System.ArgumentNullException("strIngredient2");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(strIngredient2));
+            }
+            if ((strIngredient3 == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(strIngredient3));
+            }
+            if ((strIngredient4 == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(strIngredient4));
+            }
+            if ((strIngredient5 == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(strIngredient5));
+            }
+            if ((strIngredient6 == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(strIngredient6));
+            }
+            if ((strIngredient7 == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(strIngredient7));
+            }
+            if ((strIngredient8 == null)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(strIngredient8));
+            }
+            if ((strIngredient9 == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(strIngredient9));
+            }
+            if ((strIngredient10 == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(strIngredient10));
+            }
+            if ((strIngredient11 == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(strIngredient11));
+            }
+            if ((strIngredient12 == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(strIngredient12));
+            }
+            if ((strIngredient13 == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(strIngredient13));
+            }
+            if ((strIngredient14 == null)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(strIngredient14));
+            }
+            if ((strIngredient15 == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(strIngredient15));
+            }
+            if ((strMeasure1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(strMeasure1));
+            }
+            if ((strMeasure2 == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(strMeasure2));
+            }
+            if ((strMeasure3 == null)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(strMeasure3));
+            }
+            if ((strMeasure4 == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(strMeasure4));
+            }
+            if ((strMeasure5 == null)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(strMeasure5));
+            }
+            if ((strMeasure6 == null)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(strMeasure6));
+            }
+            if ((strMeasure7 == null)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(strMeasure7));
+            }
+            if ((strMeasure8 == null)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(strMeasure8));
+            }
+            if ((strMeasure9 == null)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(strMeasure9));
+            }
+            if ((strMeasure10 == null)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(strMeasure10));
+            }
+            if ((strMeasure11 == null)) {
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(strMeasure11));
+            }
+            if ((strMeasure12 == null)) {
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(strMeasure12));
+            }
+            if ((strMeasure13 == null)) {
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(strMeasure13));
+            }
+            if ((strMeasure14 == null)) {
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(strMeasure14));
+            }
+            if ((strMeasure15 == null)) {
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(strMeasure15));
+            }
+            if ((dateModified == null)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(dateModified));
+            }
+            this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Original_idDrink));
+            if ((Original_strDrink == null)) {
+                throw new global::System.ArgumentNullException("Original_strDrink");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_strDrink));
+            }
+            if ((Original_strTags == null)) {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_strTags));
+            }
+            if ((Original_strCategory == null)) {
+                throw new global::System.ArgumentNullException("Original_strCategory");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_strCategory));
+            }
+            if ((Original_strIBA == null)) {
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_strIBA));
+            }
+            if ((Original_strAlcoholic == null)) {
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_strAlcoholic));
+            }
+            if ((Original_strGlass == null)) {
+                throw new global::System.ArgumentNullException("Original_strGlass");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_strGlass));
+            }
+            if ((Original_strInstructions == null)) {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_strInstructions));
+            }
+            if ((Original_strDrinkThumb == null)) {
+                throw new global::System.ArgumentNullException("Original_strDrinkThumb");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_strDrinkThumb));
+            }
+            if ((Original_strIngredient1 == null)) {
+                throw new global::System.ArgumentNullException("Original_strIngredient1");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_strIngredient1));
+            }
+            if ((Original_strIngredient2 == null)) {
+                throw new global::System.ArgumentNullException("Original_strIngredient2");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(Original_strIngredient2));
+            }
+            if ((Original_strIngredient3 == null)) {
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(Original_strIngredient3));
+            }
+            if ((Original_strIngredient4 == null)) {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(Original_strIngredient4));
+            }
+            if ((Original_strIngredient5 == null)) {
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((string)(Original_strIngredient5));
+            }
+            if ((Original_strIngredient6 == null)) {
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((string)(Original_strIngredient6));
+            }
+            if ((Original_strIngredient7 == null)) {
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_strIngredient7));
+            }
+            if ((Original_strIngredient8 == null)) {
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((string)(Original_strIngredient8));
+            }
+            if ((Original_strIngredient9 == null)) {
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((string)(Original_strIngredient9));
+            }
+            if ((Original_strIngredient10 == null)) {
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((string)(Original_strIngredient10));
+            }
+            if ((Original_strIngredient11 == null)) {
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((string)(Original_strIngredient11));
+            }
+            if ((Original_strIngredient12 == null)) {
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((string)(Original_strIngredient12));
+            }
+            if ((Original_strIngredient13 == null)) {
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((string)(Original_strIngredient13));
+            }
+            if ((Original_strIngredient14 == null)) {
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((string)(Original_strIngredient14));
+            }
+            if ((Original_strIngredient15 == null)) {
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((string)(Original_strIngredient15));
+            }
+            if ((Original_strMeasure1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((string)(Original_strMeasure1));
+            }
+            if ((Original_strMeasure2 == null)) {
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((string)(Original_strMeasure2));
+            }
+            if ((Original_strMeasure3 == null)) {
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[86].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((string)(Original_strMeasure3));
+            }
+            if ((Original_strMeasure4 == null)) {
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[88].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((string)(Original_strMeasure4));
+            }
+            if ((Original_strMeasure5 == null)) {
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[90].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[90].Value = ((string)(Original_strMeasure5));
+            }
+            if ((Original_strMeasure6 == null)) {
+                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[92].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[92].Value = ((string)(Original_strMeasure6));
+            }
+            if ((Original_strMeasure7 == null)) {
+                this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[94].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[94].Value = ((string)(Original_strMeasure7));
+            }
+            if ((Original_strMeasure8 == null)) {
+                this.Adapter.UpdateCommand.Parameters[95].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[96].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[95].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[96].Value = ((string)(Original_strMeasure8));
+            }
+            if ((Original_strMeasure9 == null)) {
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[98].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[98].Value = ((string)(Original_strMeasure9));
+            }
+            if ((Original_strMeasure10 == null)) {
+                this.Adapter.UpdateCommand.Parameters[99].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[100].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[99].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[100].Value = ((string)(Original_strMeasure10));
+            }
+            if ((Original_strMeasure11 == null)) {
+                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[102].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[102].Value = ((string)(Original_strMeasure11));
+            }
+            if ((Original_strMeasure12 == null)) {
+                this.Adapter.UpdateCommand.Parameters[103].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[104].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[103].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[104].Value = ((string)(Original_strMeasure12));
+            }
+            if ((Original_strMeasure13 == null)) {
+                this.Adapter.UpdateCommand.Parameters[105].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[106].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[105].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[106].Value = ((string)(Original_strMeasure13));
+            }
+            if ((Original_strMeasure14 == null)) {
+                this.Adapter.UpdateCommand.Parameters[107].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[108].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[107].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[108].Value = ((string)(Original_strMeasure14));
+            }
+            if ((Original_strMeasure15 == null)) {
+                this.Adapter.UpdateCommand.Parameters[109].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[110].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[109].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[110].Value = ((string)(Original_strMeasure15));
+            }
+            if ((Original_dateModified == null)) {
+                this.Adapter.UpdateCommand.Parameters[111].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[112].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[111].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[112].Value = ((string)(Original_dateModified));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string strDrink, 
+                    string strTags, 
+                    string strCategory, 
+                    string strIBA, 
+                    string strAlcoholic, 
+                    string strGlass, 
+                    string strInstructions, 
+                    string strDrinkThumb, 
+                    string strIngredient1, 
+                    string strIngredient2, 
+                    string strIngredient3, 
+                    string strIngredient4, 
+                    string strIngredient5, 
+                    string strIngredient6, 
+                    string strIngredient7, 
+                    string strIngredient8, 
+                    string strIngredient9, 
+                    string strIngredient10, 
+                    string strIngredient11, 
+                    string strIngredient12, 
+                    string strIngredient13, 
+                    string strIngredient14, 
+                    string strIngredient15, 
+                    string strMeasure1, 
+                    string strMeasure2, 
+                    string strMeasure3, 
+                    string strMeasure4, 
+                    string strMeasure5, 
+                    string strMeasure6, 
+                    string strMeasure7, 
+                    string strMeasure8, 
+                    string strMeasure9, 
+                    string strMeasure10, 
+                    string strMeasure11, 
+                    string strMeasure12, 
+                    string strMeasure13, 
+                    string strMeasure14, 
+                    string strMeasure15, 
+                    string dateModified, 
+                    int Original_idDrink, 
+                    string Original_strDrink, 
+                    string Original_strTags, 
+                    string Original_strCategory, 
+                    string Original_strIBA, 
+                    string Original_strAlcoholic, 
+                    string Original_strGlass, 
+                    string Original_strInstructions, 
+                    string Original_strDrinkThumb, 
+                    string Original_strIngredient1, 
+                    string Original_strIngredient2, 
+                    string Original_strIngredient3, 
+                    string Original_strIngredient4, 
+                    string Original_strIngredient5, 
+                    string Original_strIngredient6, 
+                    string Original_strIngredient7, 
+                    string Original_strIngredient8, 
+                    string Original_strIngredient9, 
+                    string Original_strIngredient10, 
+                    string Original_strIngredient11, 
+                    string Original_strIngredient12, 
+                    string Original_strIngredient13, 
+                    string Original_strIngredient14, 
+                    string Original_strIngredient15, 
+                    string Original_strMeasure1, 
+                    string Original_strMeasure2, 
+                    string Original_strMeasure3, 
+                    string Original_strMeasure4, 
+                    string Original_strMeasure5, 
+                    string Original_strMeasure6, 
+                    string Original_strMeasure7, 
+                    string Original_strMeasure8, 
+                    string Original_strMeasure9, 
+                    string Original_strMeasure10, 
+                    string Original_strMeasure11, 
+                    string Original_strMeasure12, 
+                    string Original_strMeasure13, 
+                    string Original_strMeasure14, 
+                    string Original_strMeasure15, 
+                    string Original_dateModified) {
+            return this.Update(Original_idDrink, strDrink, strTags, strCategory, strIBA, strAlcoholic, strGlass, strInstructions, strDrinkThumb, strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5, strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10, strIngredient11, strIngredient12, strIngredient13, strIngredient14, strIngredient15, strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5, strMeasure6, strMeasure7, strMeasure8, strMeasure9, strMeasure10, strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15, dateModified, Original_idDrink, Original_strDrink, Original_strTags, Original_strCategory, Original_strIBA, Original_strAlcoholic, Original_strGlass, Original_strInstructions, Original_strDrinkThumb, Original_strIngredient1, Original_strIngredient2, Original_strIngredient3, Original_strIngredient4, Original_strIngredient5, Original_strIngredient6, Original_strIngredient7, Original_strIngredient8, Original_strIngredient9, Original_strIngredient10, Original_strIngredient11, Original_strIngredient12, Original_strIngredient13, Original_strIngredient14, Original_strIngredient15, Original_strMeasure1, Original_strMeasure2, Original_strMeasure3, Original_strMeasure4, Original_strMeasure5, Original_strMeasure6, Original_strMeasure7, Original_strMeasure8, Original_strMeasure9, Original_strMeasure10, Original_strMeasure11, Original_strMeasure12, Original_strMeasure13, Original_strMeasure14, Original_strMeasure15, Original_dateModified);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5921,6 +9893,8 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)";
         private SodaTableAdapter _sodaTableAdapter;
         
         private SyrupTableAdapter _syrupTableAdapter;
+        
+        private DrinksTableAdapter _drinksTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -6023,6 +9997,20 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public DrinksTableAdapter DrinksTableAdapter {
+            get {
+                return this._drinksTableAdapter;
+            }
+            set {
+                this._drinksTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -6064,6 +10052,10 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)";
                             && (this._syrupTableAdapter.Connection != null))) {
                     return this._syrupTableAdapter.Connection;
                 }
+                if (((this._drinksTableAdapter != null) 
+                            && (this._drinksTableAdapter.Connection != null))) {
+                    return this._drinksTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -6093,6 +10085,9 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)";
                     count = (count + 1);
                 }
                 if ((this._syrupTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._drinksTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -6160,6 +10155,15 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._drinksTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Drinks.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._drinksTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -6218,6 +10222,14 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._drinksTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Drinks.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._drinksTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -6228,6 +10240,14 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(BarDatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._drinksTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Drinks.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._drinksTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._syrupTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Syrup.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -6345,6 +10365,11 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._drinksTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._drinksTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -6431,6 +10456,15 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._syrupTableAdapter.Adapter);
                     }
                 }
+                if ((this._drinksTableAdapter != null)) {
+                    revertConnections.Add(this._drinksTableAdapter, this._drinksTableAdapter.Connection);
+                    this._drinksTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._drinksTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._drinksTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._drinksTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._drinksTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -6512,6 +10546,10 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)";
                 if ((this._syrupTableAdapter != null)) {
                     this._syrupTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._syrupTableAdapter]));
                     this._syrupTableAdapter.Transaction = null;
+                }
+                if ((this._drinksTableAdapter != null)) {
+                    this._drinksTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._drinksTableAdapter]));
+                    this._drinksTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

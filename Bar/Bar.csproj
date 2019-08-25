@@ -208,6 +208,13 @@
       <DependentUpon>BarDatabase.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\save.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\left_arrow_end.png" />
+    <None Include="Resources\right_arrow_end.png" />
+    <None Include="Resources\right_arrow.png" />
+    <None Include="Resources\left_arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
