@@ -16,9 +16,10 @@ namespace Bar
 {
     public partial class Form1 : Form              ///42; 120; 138 ///СОХРАНЯЕТ ВСЕ ЛИСТЫ??
     {
+        List<String> userIngredients = new List<string>();
 
 
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -63,7 +64,7 @@ namespace Bar
         }
 
         private void buttonJuice_Click(object sender, EventArgs e)
-        {  
+        {
             panelLeft.Top = buttonJuice.Top;
             dataGridView.DataSource = juiceBindingSource;
             alcoholBindingNavigator.BindingSource = juiceBindingSource;
@@ -87,10 +88,10 @@ namespace Bar
 
         /*                  CONTROL APPLICATION                 */
         private void exitButton_Click(object sender, EventArgs e)
-        {  
+        {
             Application.Exit();
         }
-        
+
         private void minimazeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -154,15 +155,23 @@ namespace Bar
             this.juiceTableAdapter.Fill(this.barDatabaseDataSet.Juice);
             // TODO: This line of code loads data into the 'barDatabaseDataSet.Fruit' table. You can move, or remove it, as needed.
             this.fruitTableAdapter.Fill(this.barDatabaseDataSet.Fruit);
- 
+
         }
 
         private void cocktailsDBButton_Click(object sender, EventArgs e)
         {
-            /*try
+            try
             {
                 DataTable DrinksTable = this.barDatabaseDataSet.Drinks;
-                foreach (DataRow foundRows in DrinksTable.Select("strIngredient1 LIKE '%Brandy%'"))// IN('%Vodka%', '%Gun%', '%Brandy%')
+                getAllUserIngridients();
+
+                /*foreach (string item in userIngredients)
+                {
+                    Console.WriteLine(item);
+                }*/
+                //Console.WriteLine(getSearchString());
+
+                foreach (DataRow foundRows in DrinksTable.Select(getSearchString()))
                 {
                     Console.WriteLine(foundRows["strDrink"]);
                 }
@@ -171,7 +180,7 @@ namespace Bar
                     foreach(DataColumn col in DrinksTable.Columns)
                 }*
                 
-                /*string link = DrinksTable.Rows[0]["strDrinkThumb"].ToString();
+                /*string link = DrinksTable.Rows[0]["strDrinkThumb"].ToString();    
                 Console.WriteLine(link);
                 WebClient wc = new WebClient();
                 byte[] bytes = wc.DownloadData(link);
@@ -179,11 +188,47 @@ namespace Bar
                 System.Drawing.Image image = System.Drawing.Image.FromStream(ms);
                 pictureBox2.Image = image;*/
 
-            /*}
+            }
             catch (Exception error)
             {
                 Console.WriteLine("Error: " + error.Message);
-            }*/
+            }
+        }
+
+        private string getSearchString()//("strIngredient IS NULL OR IN ('', '', '')) AND"
+        {
+            string searchString = ""; 
+            for (int ingredientN = 1; ingredientN < 16; ingredientN++)
+            {
+                searchString += "(strIngredient" + ingredientN.ToString() + " IS NULL OR " + "strIngredient" + ingredientN.ToString() + " IN (";
+                foreach (string userIngredient in userIngredients)
+                {
+                    searchString += "'" + userIngredient + "', ";
+                }
+                searchString += ")) AND ";
+            }
+            searchString = searchString.Substring(0, searchString.Length - 4); // обрезаем лишний "AND "
+            return searchString;
+        }
+
+        private void getAllUserIngridients()
+        {
+            collectDataFromTable(this.barDatabaseDataSet.Alcohol);
+            collectDataFromTable(this.barDatabaseDataSet.Syrup);
+            collectDataFromTable(this.barDatabaseDataSet.Soda);
+            collectDataFromTable(this.barDatabaseDataSet.Juice);
+            collectDataFromTable(this.barDatabaseDataSet.Fruit);
+            collectDataFromTable(this.barDatabaseDataSet.Other);
+
+        }
+
+        private void collectDataFromTable(DataTable table)
+        {
+            foreach (DataRow row in table.Rows)
+            {
+                userIngredients.Add(row["Name"].ToString());
+            }
+
         }
 
         private void MakeButton_Click(object sender, EventArgs e)
