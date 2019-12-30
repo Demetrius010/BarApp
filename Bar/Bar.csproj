@@ -208,6 +208,8 @@
       <DependentUpon>BarDatabase.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\resize26.png" />
+    <None Include="Resources\resize261.png" />
     <None Include="Resources\save.png" />
     <None Include="Resources\delete.png" />
     <None Include="Resources\add.png" />

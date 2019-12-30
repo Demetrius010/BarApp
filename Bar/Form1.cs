@@ -14,16 +14,19 @@ using System.Net;
 
 namespace Bar
 {
-    public partial class Form1 : Form              ///42; 120; 138 ///СОХРАНЯЕТ ВСЕ ЛИСТЫ??
+    public partial class Form1 : Form
     {
-        List<String> userIngredients = new List<string>();
-
-
+        List<String> userIngredients = new List<string>(); // Список всех ингридиентов пользователя
+        Size defaultScreenSize;
 
         public Form1()
         {
             InitializeComponent();
-        }
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            defaultScreenSize = this.Size;
+            gridIsActive(false);
+        }       
+
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
@@ -40,13 +43,28 @@ namespace Bar
 
         }
 
+        /*                  LOAD              */
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            alcoholBindingNavigator.Renderer = new MyToolStripSystemRenderer();
+            this.drinksTableAdapter.Fill(this.barDatabaseDataSet.Drinks);// This line of code loads data into the 'barDatabaseDataSet.Drinks' table.
+            this.alcoholTableAdapter.Fill(this.barDatabaseDataSet.Alcohol);// This line of code loads data into the 'barDatabaseDataSet.Alcohol' table.
+            this.otherTableAdapter.Fill(this.barDatabaseDataSet.Other);// This line of code loads data into the 'barDatabaseDataSet.Other' table.
+            this.syrupTableAdapter.Fill(this.barDatabaseDataSet.Syrup);// This line of code loads data into the 'barDatabaseDataSet.Syrup' table.
+            this.sodaTableAdapter.Fill(this.barDatabaseDataSet.Soda);// This line of code loads data into the 'barDatabaseDataSet.Soda' table.
+            this.juiceTableAdapter.Fill(this.barDatabaseDataSet.Juice);// This line of code loads data into the 'barDatabaseDataSet.Juice' table.
+            this.fruitTableAdapter.Fill(this.barDatabaseDataSet.Fruit);// This line of code loads data into the 'barDatabaseDataSet.Fruit' table.
+            gridIsActive(false);
+            fillFlowLayoutPanel();
+        }
 
         /*                   ACTIONS IN THE LEFT PANEL             */
         private void buttonAlcohol_Click(object sender, EventArgs e)
         {
             panelLeft.Top = buttonAlcohol.Top;
-            dataGridView.DataSource = alcoholBindingSource;
-            alcoholBindingNavigator.BindingSource = alcoholBindingSource;
+            dataGridView.DataSource = alcoholBindingSource; // Устанавливаем источник данных
+            alcoholBindingNavigator.BindingSource = alcoholBindingSource;// Устанавливаем меню действий (блок кнопок работы с таблицей)
+            gridIsActive(true);
         }
 
         private void buttonSyrup_Click(object sender, EventArgs e)
@@ -54,6 +72,7 @@ namespace Bar
             panelLeft.Top = buttonSyrup.Top;
             dataGridView.DataSource = syrupBindingSource;
             alcoholBindingNavigator.BindingSource = syrupBindingSource;
+            gridIsActive(true);
         }
 
         private void buttonSoda_Click(object sender, EventArgs e)
@@ -61,6 +80,7 @@ namespace Bar
             panelLeft.Top = buttonSoda.Top;
             dataGridView.DataSource = sodaBindingSource;
             alcoholBindingNavigator.BindingSource = sodaBindingSource;
+            gridIsActive(true);
         }
 
         private void buttonJuice_Click(object sender, EventArgs e)
@@ -68,6 +88,7 @@ namespace Bar
             panelLeft.Top = buttonJuice.Top;
             dataGridView.DataSource = juiceBindingSource;
             alcoholBindingNavigator.BindingSource = juiceBindingSource;
+            gridIsActive(true);
         }
 
         private void buttonFruit_Click(object sender, EventArgs e)
@@ -75,6 +96,7 @@ namespace Bar
             panelLeft.Top = buttonFruit.Top;
             dataGridView.DataSource = fruitBindingSource;
             alcoholBindingNavigator.BindingSource = fruitBindingSource;
+            gridIsActive(true);
 
         }
 
@@ -83,12 +105,39 @@ namespace Bar
             panelLeft.Top = buttonOther.Top;
             dataGridView.DataSource = otherBindingSource;
             alcoholBindingNavigator.BindingSource = otherBindingSource;
+            gridIsActive(true);
+        }
+
+
+        private void cocktailsDBButton_Click(object sender, EventArgs e)// выводим список коктелей которые можно создать из доступных ингридиентов 
+        {
+            gridIsActive(false);
+            fillFlowLayoutPanel();
+        }
+
+        private void MakeButton_Click(object sender, EventArgs e)
+        {
+
         }
 
 
         /*                  CONTROL APPLICATION                 */
+        private void gridIsActive(bool condition)   // Скрываем / Показываем таблицу с теми или иными ингридиентами 
+        {
+            alcoholBindingNavigator.Visible = condition;
+            alcoholBindingNavigator.Enabled = condition;
+            dataGridView.Visible = condition;
+            dataGridView.Enabled = condition;
+            panelLeft.Visible = condition;
+            flowLayoutPanel1.Enabled = !condition;
+            flowLayoutPanel1.Visible = !condition;
+        }
+
         private void exitButton_Click(object sender, EventArgs e)
         {
+            this.Validate();                                             // Сохраняем изменения
+            this.alcoholBindingSource.EndEdit();                         // перед тем как 
+            this.tableAdapterManager.UpdateAll(this.barDatabaseDataSet); // закрыть приложение
             Application.Exit();
         }
 
@@ -99,7 +148,107 @@ namespace Bar
 
         private void fullScreenButton_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            if(this.WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
+
+        private void alcoholBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.alcoholBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.barDatabaseDataSet);
+        }
+
+        /*                  SEARCH COCKTAILS              */
+        private void fillFlowLayoutPanel()
+        {
+            flowLayoutPanel1.Controls.Clear();
+            try
+            {
+                DataTable DrinksTable = this.barDatabaseDataSet.Drinks;// Локальная таблица от TheCoctailsApi которая содержит информацию о всех коктелях
+                string link;
+                WebClient wc = new WebClient();
+                byte[] bytes;
+                MemoryStream ms;
+                getAllUserIngridients(); // собираем все ингридиенты из всех таблиц пользователя
+                foreach (DataRow foundRows in DrinksTable.Select(getSearchString()))// выбираем из локальной таблицы коктели для которых у пользователя есть ингридиенты
+                {
+                    GroupBox groupBox = new GroupBox(); // создаем рамку с названием для фотки коктеля
+                    groupBox.Width = 240;
+                    groupBox.Height = 265;
+                    groupBox.Text = foundRows["strDrink"].ToString(); // столбец strDrink содержит название коктеля
+                    groupBox.Font = new Font(this.Font, FontStyle.Bold);
+                    groupBox.ForeColor = Color.FromArgb(255, 200, 0);
+                    groupBox.Margin = new Padding(0, 0, 15, 20);
+
+                    //drinkDescription1.Text = foundRows["strInstructions"].ToString();
+
+                    link = foundRows["strDrinkThumb"].ToString(); // столбец strDrinkThumb содержит фото коктеля
+                    bytes = wc.DownloadData(link);
+                    ms = new MemoryStream(bytes);
+
+                    PictureBox pictureBox = new PictureBox();
+                    pictureBox.Width = groupBox.Width;
+                    pictureBox.Height = groupBox.Height - 20;
+                    pictureBox.Image = Image.FromStream(ms);
+                    pictureBox.Dock = DockStyle.Bottom;
+                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox.Click += new EventHandler(certainCocktailClick);
+                    ms.Close();
+                    groupBox.Controls.Add(pictureBox);
+                    flowLayoutPanel1.Controls.Add(groupBox);
+                    //return;
+                }
+                
+
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine("Error: " + error.Message);
+            }
+        }
+
+        private string getSearchString()//("strIngredient IS NULL OR strIngredient IN ('', '', '')) AND"
+        {
+            string searchString = ""; 
+            for (int ingredientN = 1; ingredientN < 16; ingredientN++)
+            {
+                searchString += "(strIngredient" + ingredientN.ToString() + " IS NULL OR " + "strIngredient" + ingredientN.ToString() + " IN (";
+                foreach (string userIngredient in userIngredients)
+                {
+                    searchString += "'" + userIngredient + "', ";
+                }
+                searchString += ")) AND ";
+            }
+            searchString = searchString.Substring(0, searchString.Length - 4); // обрезаем лишний "AND "
+            return searchString;
+        }
+
+        private void getAllUserIngridients() // Вызывает функцию заполнения списка ингредиентов пользователя
+        {
+            collectDataFromTable(this.barDatabaseDataSet.Alcohol);
+            collectDataFromTable(this.barDatabaseDataSet.Syrup);
+            collectDataFromTable(this.barDatabaseDataSet.Soda);
+            collectDataFromTable(this.barDatabaseDataSet.Juice);
+            collectDataFromTable(this.barDatabaseDataSet.Fruit);
+            collectDataFromTable(this.barDatabaseDataSet.Other);
+        }
+
+        private void collectDataFromTable(DataTable table) // Заполняет список ингредиентами из таблиц
+        {
+            foreach (DataRow row in table.Rows)
+            {
+                userIngredients.Add(row["Name"].ToString());
+            }
+        }
+
+ 
+        private void certainCocktailClick(object sender, EventArgs e)
+        {
+            //flowLayoutPanel1.Enabled = false;
+            //flowLayoutPanel1.Visible = false;
         }
 
 
@@ -128,117 +277,22 @@ namespace Bar
             }
         }
 
+        private const int cGrip = 16;// Grip size
 
-        private void alcoholBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        protected override void WndProc(ref Message m)
         {
-            this.Validate();
-            this.alcoholBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.barDatabaseDataSet);
-
-        }
-
-        /*                  LOAD FILE (TABLE)              */
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            alcoholBindingNavigator.Renderer = new MyToolStripSystemRenderer();
-            // TODO: This line of code loads data into the 'barDatabaseDataSet.Drinks' table. You can move, or remove it, as needed.
-            this.drinksTableAdapter.Fill(this.barDatabaseDataSet.Drinks);
-            // TODO: This line of code loads data into the 'barDatabaseDataSet.Alcohol' table. You can move, or remove it, as needed.
-            this.alcoholTableAdapter.Fill(this.barDatabaseDataSet.Alcohol);
-            // TODO: This line of code loads data into the 'barDatabaseDataSet.Other' table. You can move, or remove it, as needed.
-            this.otherTableAdapter.Fill(this.barDatabaseDataSet.Other);
-            // TODO: This line of code loads data into the 'barDatabaseDataSet.Syrup' table. You can move, or remove it, as needed.
-            this.syrupTableAdapter.Fill(this.barDatabaseDataSet.Syrup);
-            // TODO: This line of code loads data into the 'barDatabaseDataSet.Soda' table. You can move, or remove it, as needed.
-            this.sodaTableAdapter.Fill(this.barDatabaseDataSet.Soda);
-            // TODO: This line of code loads data into the 'barDatabaseDataSet.Juice' table. You can move, or remove it, as needed.
-            this.juiceTableAdapter.Fill(this.barDatabaseDataSet.Juice);
-            // TODO: This line of code loads data into the 'barDatabaseDataSet.Fruit' table. You can move, or remove it, as needed.
-            this.fruitTableAdapter.Fill(this.barDatabaseDataSet.Fruit);
-
-        }
-
-        private void cocktailsDBButton_Click(object sender, EventArgs e)
-        {
-            try
+            if (m.Msg == 0x84)//  this message use it's Result property to return the position of the cursor hot sopt. 
             {
-                DataTable DrinksTable = this.barDatabaseDataSet.Drinks;
-                getAllUserIngridients();
-
-                /*foreach (string item in userIngredients)
+                Point pos = new Point(m.LParam.ToInt32());
+                pos = this.PointToClient(pos); //Computes the location of the specified screen point into client coordinates.
+                if (pos.X >= this.ClientSize.Width - cGrip && pos.Y >= this.ClientSize.Height - cGrip)
                 {
-                    Console.WriteLine(item);
-                }*/
-                //Console.WriteLine(getSearchString());
-
-                foreach (DataRow foundRows in DrinksTable.Select(getSearchString()))
-                {
-                    Console.WriteLine(foundRows["strDrink"]);
+                    m.Result = (IntPtr)17; // In the lower-right corner of a border of a resizable window (the user can click the mouse to resize the window diagonally).
+                    return;
                 }
-                /*foreach(DataRow row in DrinksTable.Rows)
-                {
-                    foreach(DataColumn col in DrinksTable.Columns)
-                }*
-                
-                /*string link = DrinksTable.Rows[0]["strDrinkThumb"].ToString();    
-                Console.WriteLine(link);
-                WebClient wc = new WebClient();
-                byte[] bytes = wc.DownloadData(link);
-                MemoryStream ms = new MemoryStream(bytes);
-                System.Drawing.Image image = System.Drawing.Image.FromStream(ms);
-                pictureBox2.Image = image;*/
-
             }
-            catch (Exception error)
-            {
-                Console.WriteLine("Error: " + error.Message);
-            }
+            base.WndProc(ref m);
         }
 
-        private string getSearchString()//("strIngredient IS NULL OR IN ('', '', '')) AND"
-        {
-            string searchString = ""; 
-            for (int ingredientN = 1; ingredientN < 16; ingredientN++)
-            {
-                searchString += "(strIngredient" + ingredientN.ToString() + " IS NULL OR " + "strIngredient" + ingredientN.ToString() + " IN (";
-                foreach (string userIngredient in userIngredients)
-                {
-                    searchString += "'" + userIngredient + "', ";
-                }
-                searchString += ")) AND ";
-            }
-            searchString = searchString.Substring(0, searchString.Length - 4); // обрезаем лишний "AND "
-            return searchString;
-        }
-
-        private void getAllUserIngridients()
-        {
-            collectDataFromTable(this.barDatabaseDataSet.Alcohol);
-            collectDataFromTable(this.barDatabaseDataSet.Syrup);
-            collectDataFromTable(this.barDatabaseDataSet.Soda);
-            collectDataFromTable(this.barDatabaseDataSet.Juice);
-            collectDataFromTable(this.barDatabaseDataSet.Fruit);
-            collectDataFromTable(this.barDatabaseDataSet.Other);
-
-        }
-
-        private void collectDataFromTable(DataTable table)
-        {
-            foreach (DataRow row in table.Rows)
-            {
-                userIngredients.Add(row["Name"].ToString());
-            }
-
-        }
-
-        private void MakeButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bindingNavigatorDeleteItem1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
