@@ -75,7 +75,13 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.minimazeBurtton = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.availableСocktailsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.cocktailInfo = new System.Windows.Forms.Panel();
+            this.requiredIngredientsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.cocktailInstruction = new System.Windows.Forms.TextBox();
+            this.cocktailGlass = new System.Windows.Forms.Label();
+            this.cocktailName = new System.Windows.Forms.Label();
+            this.cocktailPictureBox = new System.Windows.Forms.PictureBox();
             this.alcoholBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.barDatabaseDataSet = new Bar.BarDatabaseDataSet();
             this.fruitBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -92,12 +98,16 @@
             this.otherBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.drinksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.drinksTableAdapter = new Bar.BarDatabaseDataSetTableAdapters.DrinksTableAdapter();
+            this.ingredientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ingredientsTableAdapter = new Bar.BarDatabaseDataSetTableAdapters.IngredientsTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.hatApplicationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alcoholBindingNavigator)).BeginInit();
             this.alcoholBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.cocktailInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cocktailPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alcoholBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fruitBindingSource)).BeginInit();
@@ -106,6 +116,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.syrupBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.otherBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drinksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -594,17 +605,88 @@
             this.minimazeBurtton.UseVisualStyleBackColor = true;
             this.minimazeBurtton.Click += new System.EventHandler(this.minimazeButton_Click);
             // 
-            // flowLayoutPanel1
+            // availableСocktailsPanel
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.availableСocktailsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(223, 34);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(798, 729);
-            this.flowLayoutPanel1.TabIndex = 19;
+            this.availableСocktailsPanel.AutoScroll = true;
+            this.availableСocktailsPanel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.availableСocktailsPanel.Location = new System.Drawing.Point(223, 34);
+            this.availableСocktailsPanel.Name = "availableСocktailsPanel";
+            this.availableСocktailsPanel.Size = new System.Drawing.Size(798, 729);
+            this.availableСocktailsPanel.TabIndex = 19;
+            // 
+            // cocktailInfo
+            // 
+            this.cocktailInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cocktailInfo.AutoScroll = true;
+            this.cocktailInfo.Controls.Add(this.requiredIngredientsPanel);
+            this.cocktailInfo.Controls.Add(this.cocktailInstruction);
+            this.cocktailInfo.Controls.Add(this.cocktailGlass);
+            this.cocktailInfo.Controls.Add(this.cocktailName);
+            this.cocktailInfo.Controls.Add(this.cocktailPictureBox);
+            this.cocktailInfo.Location = new System.Drawing.Point(220, 34);
+            this.cocktailInfo.Name = "cocktailInfo";
+            this.cocktailInfo.Size = new System.Drawing.Size(801, 729);
+            this.cocktailInfo.TabIndex = 0;
+            // 
+            // requiredIngredientsPanel
+            // 
+            this.requiredIngredientsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.requiredIngredientsPanel.AutoScroll = true;
+            this.requiredIngredientsPanel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.requiredIngredientsPanel.Location = new System.Drawing.Point(3, 339);
+            this.requiredIngredientsPanel.Name = "requiredIngredientsPanel";
+            this.requiredIngredientsPanel.Size = new System.Drawing.Size(795, 387);
+            this.requiredIngredientsPanel.TabIndex = 20;
+            // 
+            // cocktailInstruction
+            // 
+            this.cocktailInstruction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cocktailInstruction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.cocktailInstruction.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cocktailInstruction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.cocktailInstruction.Location = new System.Drawing.Point(364, 66);
+            this.cocktailInstruction.Multiline = true;
+            this.cocktailInstruction.Name = "cocktailInstruction";
+            this.cocktailInstruction.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.cocktailInstruction.Size = new System.Drawing.Size(434, 267);
+            this.cocktailInstruction.TabIndex = 5;
+            this.cocktailInstruction.Text = "Instruction:";
+            // 
+            // cocktailGlass
+            // 
+            this.cocktailGlass.AutoSize = true;
+            this.cocktailGlass.Location = new System.Drawing.Point(362, 42);
+            this.cocktailGlass.Name = "cocktailGlass";
+            this.cocktailGlass.Size = new System.Drawing.Size(54, 21);
+            this.cocktailGlass.TabIndex = 4;
+            this.cocktailGlass.Text = "Glass:";
+            // 
+            // cocktailName
+            // 
+            this.cocktailName.AutoSize = true;
+            this.cocktailName.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cocktailName.Location = new System.Drawing.Point(359, 3);
+            this.cocktailName.Name = "cocktailName";
+            this.cocktailName.Size = new System.Drawing.Size(114, 39);
+            this.cocktailName.TabIndex = 1;
+            this.cocktailName.Text = "Name";
+            // 
+            // cocktailPictureBox
+            // 
+            this.cocktailPictureBox.Location = new System.Drawing.Point(3, 3);
+            this.cocktailPictureBox.Name = "cocktailPictureBox";
+            this.cocktailPictureBox.Size = new System.Drawing.Size(350, 330);
+            this.cocktailPictureBox.TabIndex = 0;
+            this.cocktailPictureBox.TabStop = false;
             // 
             // alcoholBindingSource
             // 
@@ -687,6 +769,15 @@
             // 
             this.drinksTableAdapter.ClearBeforeFill = true;
             // 
+            // ingredientsBindingSource
+            // 
+            this.ingredientsBindingSource.DataMember = "Ingredients";
+            this.ingredientsBindingSource.DataSource = this.barDatabaseDataSet;
+            // 
+            // ingredientsTableAdapter
+            // 
+            this.ingredientsTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -695,7 +786,8 @@
             this.Controls.Add(this.hatApplicationPanel);
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.cocktailInfo);
+            this.Controls.Add(this.availableСocktailsPanel);
             this.Controls.Add(this.dataGridView);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
@@ -714,6 +806,9 @@
             this.alcoholBindingNavigator.ResumeLayout(false);
             this.alcoholBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.cocktailInfo.ResumeLayout(false);
+            this.cocktailInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cocktailPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alcoholBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fruitBindingSource)).EndInit();
@@ -722,6 +817,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.syrupBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.otherBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drinksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingredientsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -790,7 +886,15 @@
         private System.Windows.Forms.BindingSource drinksBindingSource;
         private BarDatabaseDataSetTableAdapters.DrinksTableAdapter drinksTableAdapter;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel availableСocktailsPanel;
+        private System.Windows.Forms.Panel cocktailInfo;
+        private System.Windows.Forms.Label cocktailGlass;
+        private System.Windows.Forms.Label cocktailName;
+        private System.Windows.Forms.PictureBox cocktailPictureBox;
+        private System.Windows.Forms.TextBox cocktailInstruction;
+        private System.Windows.Forms.FlowLayoutPanel requiredIngredientsPanel;
+        private System.Windows.Forms.BindingSource ingredientsBindingSource;
+        private BarDatabaseDataSetTableAdapters.IngredientsTableAdapter ingredientsTableAdapter;
     }
 }
 

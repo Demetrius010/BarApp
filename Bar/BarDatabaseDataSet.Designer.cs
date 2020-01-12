@@ -3323,7 +3323,7 @@ namespace Bar {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class IngredientsDataTable : global::System.Data.TypedTableBase<IngredientsRow> {
             
-            private global::System.Data.DataColumn columnidDrink;
+            private global::System.Data.DataColumn columnidIngredient;
             
             private global::System.Data.DataColumn columnstrIngredient;
             
@@ -3364,9 +3364,9 @@ namespace Bar {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn idDrinkColumn {
+            public global::System.Data.DataColumn idIngredientColumn {
                 get {
-                    return this.columnidDrink;
+                    return this.columnidIngredient;
                 }
             }
             
@@ -3423,10 +3423,10 @@ namespace Bar {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public IngredientsRow AddIngredientsRow(int idDrink, string strIngredient, string strIngredientThumb) {
+            public IngredientsRow AddIngredientsRow(int idIngredient, string strIngredient, string strIngredientThumb) {
                 IngredientsRow rowIngredientsRow = ((IngredientsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        idDrink,
+                        idIngredient,
                         strIngredient,
                         strIngredientThumb};
                 rowIngredientsRow.ItemArray = columnValuesArray;
@@ -3436,9 +3436,9 @@ namespace Bar {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public IngredientsRow FindByidDrink(int idDrink) {
+            public IngredientsRow FindByidIngredient(int idIngredient) {
                 return ((IngredientsRow)(this.Rows.Find(new object[] {
-                            idDrink})));
+                            idIngredient})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3458,7 +3458,7 @@ namespace Bar {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnidDrink = base.Columns["idDrink"];
+                this.columnidIngredient = base.Columns["idIngredient"];
                 this.columnstrIngredient = base.Columns["strIngredient"];
                 this.columnstrIngredientThumb = base.Columns["strIngredientThumb"];
             }
@@ -3466,20 +3466,20 @@ namespace Bar {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnidDrink = new global::System.Data.DataColumn("idDrink", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidDrink);
+                this.columnidIngredient = new global::System.Data.DataColumn("idIngredient", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidIngredient);
                 this.columnstrIngredient = new global::System.Data.DataColumn("strIngredient", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstrIngredient);
                 this.columnstrIngredientThumb = new global::System.Data.DataColumn("strIngredientThumb", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstrIngredientThumb);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnidDrink}, true));
-                this.columnidDrink.AllowDBNull = false;
-                this.columnidDrink.Unique = true;
+                                this.columnidIngredient}, true));
+                this.columnidIngredient.AllowDBNull = false;
+                this.columnidIngredient.Unique = true;
                 this.columnstrIngredient.AllowDBNull = false;
-                this.columnstrIngredient.MaxLength = 26;
+                this.columnstrIngredient.MaxLength = 30;
                 this.columnstrIngredientThumb.AllowDBNull = false;
-                this.columnstrIngredientThumb.MaxLength = 75;
+                this.columnstrIngredientThumb.MaxLength = 85;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5392,12 +5392,12 @@ namespace Bar {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int idDrink {
+            public int idIngredient {
                 get {
-                    return ((int)(this[this.tableIngredients.idDrinkColumn]));
+                    return ((int)(this[this.tableIngredients.idIngredientColumn]));
                 }
                 set {
-                    this[this.tableIngredients.idDrinkColumn] = value;
+                    this[this.tableIngredients.idIngredientColumn] = value;
                 }
             }
             
@@ -10398,37 +10398,36 @@ SELECT Id, Name, Capacity, [Shelf life], [Price ] FROM Syrup WHERE (Id = @Id)";
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Ingredients";
-            tableMapping.ColumnMappings.Add("idDrink", "idDrink");
+            tableMapping.ColumnMappings.Add("idIngredient", "idIngredient");
             tableMapping.ColumnMappings.Add("strIngredient", "strIngredient");
             tableMapping.ColumnMappings.Add("strIngredientThumb", "strIngredientThumb");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Ingredients] WHERE (([idDrink] = @Original_idDrink) AND ([strI" +
-                "ngredient] = @Original_strIngredient) AND ([strIngredientThumb] = @Original_strI" +
-                "ngredientThumb))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Ingredients] WHERE (([idIngredient] = @Original_idIngredient) " +
+                "AND ([strIngredient] = @Original_strIngredient) AND ([strIngredientThumb] = @Ori" +
+                "ginal_strIngredientThumb))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idDrink", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idDrink", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idIngredient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIngredient", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredientThumb", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredientThumb", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Ingredients] ([idDrink], [strIngredient], [strIngredientThumb]" +
-                ") VALUES (@idDrink, @strIngredient, @strIngredientThumb);\r\nSELECT idDrink, strIn" +
-                "gredient, strIngredientThumb FROM Ingredients WHERE (idDrink = @idDrink)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Ingredients] ([idIngredient], [strIngredient], [strIngredientThumb]) VALUES (@idIngredient, @strIngredient, @strIngredientThumb);
+SELECT idIngredient, strIngredient, strIngredientThumb FROM Ingredients WHERE (idIngredient = @idIngredient)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idDrink", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idDrink", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idIngredient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIngredient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredientThumb", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredientThumb", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Ingredients] SET [idDrink] = @idDrink, [strIngredient] = @strIngredient, [strIngredientThumb] = @strIngredientThumb WHERE (([idDrink] = @Original_idDrink) AND ([strIngredient] = @Original_strIngredient) AND ([strIngredientThumb] = @Original_strIngredientThumb));
-SELECT idDrink, strIngredient, strIngredientThumb FROM Ingredients WHERE (idDrink = @idDrink)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Ingredients] SET [idIngredient] = @idIngredient, [strIngredient] = @strIngredient, [strIngredientThumb] = @strIngredientThumb WHERE (([idIngredient] = @Original_idIngredient) AND ([strIngredient] = @Original_strIngredient) AND ([strIngredientThumb] = @Original_strIngredientThumb));
+SELECT idIngredient, strIngredient, strIngredientThumb FROM Ingredients WHERE (idIngredient = @idIngredient)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idDrink", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idDrink", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idIngredient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIngredient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredient", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIngredientThumb", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredientThumb", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idDrink", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idDrink", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idIngredient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIngredient", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredient", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredient", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_strIngredientThumb", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "strIngredientThumb", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -10446,7 +10445,7 @@ SELECT idDrink, strIngredient, strIngredientThumb FROM Ingredients WHERE (idDrin
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idDrink, strIngredient, strIngredientThumb FROM dbo.Ingredients";
+            this._commandCollection[0].CommandText = "SELECT idIngredient, strIngredient, strIngredientThumb FROM dbo.Ingredients";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10507,8 +10506,8 @@ SELECT idDrink, strIngredient, strIngredientThumb FROM Ingredients WHERE (idDrin
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idDrink, string Original_strIngredient, string Original_strIngredientThumb) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idDrink));
+        public virtual int Delete(int Original_idIngredient, string Original_strIngredient, string Original_strIngredientThumb) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idIngredient));
             if ((Original_strIngredient == null)) {
                 throw new global::System.ArgumentNullException("Original_strIngredient");
             }
@@ -10541,8 +10540,8 @@ SELECT idDrink, strIngredient, strIngredientThumb FROM Ingredients WHERE (idDrin
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int idDrink, string strIngredient, string strIngredientThumb) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idDrink));
+        public virtual int Insert(int idIngredient, string strIngredient, string strIngredientThumb) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idIngredient));
             if ((strIngredient == null)) {
                 throw new global::System.ArgumentNullException("strIngredient");
             }
@@ -10575,8 +10574,8 @@ SELECT idDrink, strIngredient, strIngredientThumb FROM Ingredients WHERE (idDrin
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int idDrink, string strIngredient, string strIngredientThumb, int Original_idDrink, string Original_strIngredient, string Original_strIngredientThumb) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idDrink));
+        public virtual int Update(int idIngredient, string strIngredient, string strIngredientThumb, int Original_idIngredient, string Original_strIngredient, string Original_strIngredientThumb) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idIngredient));
             if ((strIngredient == null)) {
                 throw new global::System.ArgumentNullException("strIngredient");
             }
@@ -10589,7 +10588,7 @@ SELECT idDrink, strIngredient, strIngredientThumb FROM Ingredients WHERE (idDrin
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(strIngredientThumb));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_idDrink));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_idIngredient));
             if ((Original_strIngredient == null)) {
                 throw new global::System.ArgumentNullException("Original_strIngredient");
             }
@@ -10622,8 +10621,8 @@ SELECT idDrink, strIngredient, strIngredientThumb FROM Ingredients WHERE (idDrin
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string strIngredient, string strIngredientThumb, int Original_idDrink, string Original_strIngredient, string Original_strIngredientThumb) {
-            return this.Update(Original_idDrink, strIngredient, strIngredientThumb, Original_idDrink, Original_strIngredient, Original_strIngredientThumb);
+        public virtual int Update(string strIngredient, string strIngredientThumb, int Original_idIngredient, string Original_strIngredient, string Original_strIngredientThumb) {
+            return this.Update(Original_idIngredient, strIngredient, strIngredientThumb, Original_idIngredient, Original_strIngredient, Original_strIngredientThumb);
         }
     }
     

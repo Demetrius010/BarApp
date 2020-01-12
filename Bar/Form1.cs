@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
-using System.Reflection;
 using System.Net;
+using System.Windows.Forms;
 
 
 namespace Bar
@@ -24,7 +19,9 @@ namespace Bar
             InitializeComponent();
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             defaultScreenSize = this.Size;
-            gridIsActive(false);
+            gridCondition(false);
+            cocktailInfo.Enabled = false;
+            cocktailInfo.Visible = false;
         }       
 
 
@@ -46,15 +43,18 @@ namespace Bar
         /*                  LOAD              */
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+            // TODO: This line of code loads data into the 'barDatabaseDataSet.Ingredients' table. You can move, or remove it, as needed.
             alcoholBindingNavigator.Renderer = new MyToolStripSystemRenderer();
             this.drinksTableAdapter.Fill(this.barDatabaseDataSet.Drinks);// This line of code loads data into the 'barDatabaseDataSet.Drinks' table.
+            this.ingredientsTableAdapter.Fill(this.barDatabaseDataSet.Ingredients);// TODO: This line of code loads data into the 'barDatabaseDataSet.Ingredients' table. You can move, or remove it, as needed.
             this.alcoholTableAdapter.Fill(this.barDatabaseDataSet.Alcohol);// This line of code loads data into the 'barDatabaseDataSet.Alcohol' table.
             this.otherTableAdapter.Fill(this.barDatabaseDataSet.Other);// This line of code loads data into the 'barDatabaseDataSet.Other' table.
             this.syrupTableAdapter.Fill(this.barDatabaseDataSet.Syrup);// This line of code loads data into the 'barDatabaseDataSet.Syrup' table.
             this.sodaTableAdapter.Fill(this.barDatabaseDataSet.Soda);// This line of code loads data into the 'barDatabaseDataSet.Soda' table.
             this.juiceTableAdapter.Fill(this.barDatabaseDataSet.Juice);// This line of code loads data into the 'barDatabaseDataSet.Juice' table.
             this.fruitTableAdapter.Fill(this.barDatabaseDataSet.Fruit);// This line of code loads data into the 'barDatabaseDataSet.Fruit' table.
-            gridIsActive(false);
+            gridCondition(false);
             fillFlowLayoutPanel();
         }
 
@@ -64,7 +64,8 @@ namespace Bar
             panelLeft.Top = buttonAlcohol.Top;
             dataGridView.DataSource = alcoholBindingSource; // Устанавливаем источник данных
             alcoholBindingNavigator.BindingSource = alcoholBindingSource;// Устанавливаем меню действий (блок кнопок работы с таблицей)
-            gridIsActive(true);
+            gridCondition(true);
+            cocktailInfoCondition(false);
         }
 
         private void buttonSyrup_Click(object sender, EventArgs e)
@@ -72,7 +73,8 @@ namespace Bar
             panelLeft.Top = buttonSyrup.Top;
             dataGridView.DataSource = syrupBindingSource;
             alcoholBindingNavigator.BindingSource = syrupBindingSource;
-            gridIsActive(true);
+            gridCondition(true);
+            cocktailInfoCondition(false);
         }
 
         private void buttonSoda_Click(object sender, EventArgs e)
@@ -80,7 +82,8 @@ namespace Bar
             panelLeft.Top = buttonSoda.Top;
             dataGridView.DataSource = sodaBindingSource;
             alcoholBindingNavigator.BindingSource = sodaBindingSource;
-            gridIsActive(true);
+            gridCondition(true);
+            cocktailInfoCondition(false);
         }
 
         private void buttonJuice_Click(object sender, EventArgs e)
@@ -88,7 +91,8 @@ namespace Bar
             panelLeft.Top = buttonJuice.Top;
             dataGridView.DataSource = juiceBindingSource;
             alcoholBindingNavigator.BindingSource = juiceBindingSource;
-            gridIsActive(true);
+            gridCondition(true);
+            cocktailInfoCondition(false);
         }
 
         private void buttonFruit_Click(object sender, EventArgs e)
@@ -96,7 +100,8 @@ namespace Bar
             panelLeft.Top = buttonFruit.Top;
             dataGridView.DataSource = fruitBindingSource;
             alcoholBindingNavigator.BindingSource = fruitBindingSource;
-            gridIsActive(true);
+            gridCondition(true);
+            cocktailInfoCondition(false);
 
         }
 
@@ -105,13 +110,15 @@ namespace Bar
             panelLeft.Top = buttonOther.Top;
             dataGridView.DataSource = otherBindingSource;
             alcoholBindingNavigator.BindingSource = otherBindingSource;
-            gridIsActive(true);
+            gridCondition(true);
+            cocktailInfoCondition(false);
         }
 
 
         private void cocktailsDBButton_Click(object sender, EventArgs e)// выводим список коктелей которые можно создать из доступных ингридиентов 
         {
-            gridIsActive(false);
+            gridCondition(false);
+            cocktailInfoCondition(false);
             fillFlowLayoutPanel();
         }
 
@@ -122,16 +129,24 @@ namespace Bar
 
 
         /*                  CONTROL APPLICATION                 */
-        private void gridIsActive(bool condition)   // Скрываем / Показываем таблицу с теми или иными ингридиентами 
+        private void gridCondition(bool condition)   // Скрываем / Показываем таблицу с теми или иными ингридиентами 
         {
             alcoholBindingNavigator.Visible = condition;
             alcoholBindingNavigator.Enabled = condition;
             dataGridView.Visible = condition;
             dataGridView.Enabled = condition;
             panelLeft.Visible = condition;
-            flowLayoutPanel1.Enabled = !condition;
-            flowLayoutPanel1.Visible = !condition;
+            availableСocktailsPanel.Enabled = !condition;
+            availableСocktailsPanel.Visible = !condition;
         }
+
+        private void cocktailInfoCondition(bool condition)
+        {
+            cocktailInfo.Enabled = condition;
+            cocktailInfo.Visible = condition;
+        }
+
+
 
         private void exitButton_Click(object sender, EventArgs e)
         {
@@ -164,7 +179,7 @@ namespace Bar
         /*                  SEARCH COCKTAILS              */
         private void fillFlowLayoutPanel()
         {
-            flowLayoutPanel1.Controls.Clear();
+            availableСocktailsPanel.Controls.Clear();
             try
             {
                 DataTable DrinksTable = this.barDatabaseDataSet.Drinks;// Локальная таблица от TheCoctailsApi которая содержит информацию о всех коктелях
@@ -176,6 +191,7 @@ namespace Bar
                 foreach (DataRow foundRows in DrinksTable.Select(getSearchString()))// выбираем из локальной таблицы коктели для которых у пользователя есть ингридиенты
                 {
                     GroupBox groupBox = new GroupBox(); // создаем рамку с названием для фотки коктеля
+                    groupBox.Name = foundRows["idDrink"].ToString(); // столбец idDrink содержит id коктеля
                     groupBox.Width = 240;
                     groupBox.Height = 265;
                     groupBox.Text = foundRows["strDrink"].ToString(); // столбец strDrink содержит название коктеля
@@ -198,7 +214,7 @@ namespace Bar
                     pictureBox.Click += new EventHandler(certainCocktailClick);
                     ms.Close();
                     groupBox.Controls.Add(pictureBox);
-                    flowLayoutPanel1.Controls.Add(groupBox);
+                    availableСocktailsPanel.Controls.Add(groupBox);
                     //return;
                 }
                 
@@ -243,14 +259,64 @@ namespace Bar
                 userIngredients.Add(row["Name"].ToString());
             }
         }
-
  
         private void certainCocktailClick(object sender, EventArgs e)
         {
-            //flowLayoutPanel1.Enabled = false;
-            //flowLayoutPanel1.Visible = false;
-        }
+            requiredIngredientsPanel.Controls.Clear();
 
+            availableСocktailsPanel.Enabled = false;
+            availableСocktailsPanel.Visible = false;
+            cocktailInfoCondition(true);
+
+            DataTable IngredientsTable = this.barDatabaseDataSet.Ingredients; // Локальная таблица от TheCoctailsApi которая содержит информацию о всех коктелях
+            DataRow ingredientsInfo;
+            GroupBox clickedGroupBox = (GroupBox)((PictureBox)sender).Parent; // получаем нажатый GroupBox в GroupBox.Name лежит id коктеля
+            DataTable DrinksTable = this.barDatabaseDataSet.Drinks; // Локальная таблица от TheCoctailsApi которая содержит информацию о всех коктелях
+            DataRow coctailInfo = DrinksTable.Select("idDrink = " + clickedGroupBox.Name.ToString())[0]; // получаем информацию о коктеле по id
+            cocktailName.Text = coctailInfo["strDrink"].ToString();
+            cocktailInstruction.Text = coctailInfo["strInstructions"].ToString();
+            cocktailGlass.Text = coctailInfo["strGlass"].ToString();
+            //cocktailTagsTextBox.Text = coctailInfo["strTags"] + " | " + coctailInfo["strCategory"] + " | " + coctailInfo["strIBA"] + " | " + coctailInfo["strAlcoholic"];
+
+            string link = coctailInfo["strDrinkThumb"].ToString(); // столбец strDrinkThumb содержит фото коктеля
+            WebClient wc = new WebClient();
+            byte[] bytes = wc.DownloadData(link);
+            MemoryStream ms = new MemoryStream(bytes);
+            cocktailPictureBox.Image = Image.FromStream(ms);
+            cocktailPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            ms.Close();
+
+            string ingredientName;
+            string ingredientMeasure;
+            for (int i = 1; i < 16; i++) {//всего 15 ингридентов
+                ingredientName = coctailInfo["strIngredient" + i].ToString();
+                ingredientMeasure = coctailInfo["strMeasure" + i].ToString();
+                if (ingredientName != "") {// если есть ингридент создаем для него:
+                    GroupBox groupBox = new GroupBox(); // создаем рамку с названием для ингридиента коктеля
+                    groupBox.Width = 240;
+                    groupBox.Height = 265;
+                    groupBox.Text = ingredientMeasure + " " + ingredientName; // столбец strDrink содержит название коктеля
+                    groupBox.Font = new Font(this.Font, FontStyle.Bold);
+                    groupBox.ForeColor = Color.FromArgb(255, 200, 0);
+                    groupBox.Margin = new Padding(0, 0, 15, 20);
+
+                    ingredientsInfo = IngredientsTable.Select("strIngredient = '" + ingredientName +"'")[0]; // получаем информацию о ингридиенте
+                    link = ingredientsInfo["strIngredientThumb"].ToString(); // получаем ссылку на фото ингридиента
+                    bytes = wc.DownloadData(link);
+                    ms = new MemoryStream(bytes);
+
+                    PictureBox pictureBox = new PictureBox();
+                    pictureBox.Width = groupBox.Width;
+                    pictureBox.Height = groupBox.Height - 20;
+                    pictureBox.Image = Image.FromStream(ms);
+                    pictureBox.Dock = DockStyle.Bottom;
+                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                    ms.Close();
+                    groupBox.Controls.Add(pictureBox);
+                    requiredIngredientsPanel.Controls.Add(groupBox);
+                }
+            }
+        }
 
         /*                  MOVE APPLICATION                 */
         bool appMove;
@@ -293,6 +359,5 @@ namespace Bar
             }
             base.WndProc(ref m);
         }
-
     }
 }
