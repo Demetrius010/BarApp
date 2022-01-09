@@ -1,0 +1,5 @@
+﻿INSERT INTO [dbo].[Syrup] ([Id], [Name], [Capacity], [Shelf life], [Price ]) VALUES (1, N'Maple syrup', 5, NULL, CAST(5.0000 AS Money))
+INSERT INTO [dbo].[Syrup] ([Id], [Name], [Capacity], [Shelf life], [Price ]) VALUES (2, N'Sugar syrup', 1, NULL, CAST(1.0000 AS Money))
+INSERT INTO [dbo].[Syrup] ([Id], [Name], [Capacity], [Shelf life], [Price ]) VALUES (3, N'Blackberry syrup', 1, NULL, CAST(1.0000 AS Money))
+INSERT INTO [dbo].[Syrup] ([Id], [Name], [Capacity], [Shelf life], [Price ]) VALUES (4, N'Raspberry syrup', 2, NULL, NULL)
+INSERT INTO [dbo].[Syrup] ([Id], [Name], [Capacity], [Shelf life], [Price ]) VALUES (5, N'Strawberry syrup', 2, NULL, NULL)
